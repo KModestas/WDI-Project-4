@@ -7,7 +7,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <h1>WDI Project 4</h1>
+      <h1>Euphoria</h1>
     );
   }
 }
