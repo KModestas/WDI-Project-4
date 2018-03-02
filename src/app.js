@@ -1,6 +1,6 @@
 import React    from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import GigsIndex from './components/gigs/GigsIndex';
 import Login from './components/auth/Login';
@@ -20,7 +20,6 @@ class App extends React.Component {
             <Navbar />
           </header>
           <main>
-            <h1><Link to="/">Euphoria</Link></h1>
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Switch>

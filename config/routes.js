@@ -8,6 +8,9 @@ const auth  = require('../controllers/auth');
 router.route('/gigs')
   .get(gigs.index);
 
+router.route('/gigs/:id')
+  .get(gigs.show);
+
 router.route('/register')
   .post(auth.register);
 
