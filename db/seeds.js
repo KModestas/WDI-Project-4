@@ -23,9 +23,9 @@ const gigData = [{
   date: '2018'
 }];
 
-mongoose.connect(dbURI, { useMongoClient: true })
+mongoose.connect(dbURI)
   .then(db => db.dropDatabase())
   .then(() => Gig.create(gigData))
-  .then(gigs => console.log(`${gigs.length} foods created!`))
+  .then(gigs => console.log(`${gigs.length} gigs created!`))
   .catch(err => console.log(err))
   .finally(() => mongoose.connection.close());
