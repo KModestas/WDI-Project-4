@@ -6,10 +6,13 @@ const auth  = require('../controllers/auth');
 // routes go here
 
 router.route('/gigs')
-  .get(gigs.index);
+  .get(gigs.index)
+  .post(gigs.create);
 
 router.route('/gigs/:id')
-  .get(gigs.show);
+  .get(gigs.show)
+  .put(gigs.update)
+  .delete(gigs.delete);
 
 router.route('/register')
   .post(auth.register);
