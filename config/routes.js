@@ -3,6 +3,8 @@ const gigs = require('../controllers/gigs');
 const auth  = require('../controllers/auth');
 // const secureRoute = require('../lib/secureRoute');
 
+const skiddle = require('../controllers/skiddle');
+
 // routes go here
 
 router.route('/gigs')
@@ -19,6 +21,7 @@ router.route('/register')
 
 router.route('/login')
   .post(auth.login);
+
 
 router.all('/*', (req, res) => res.notFound());
 

@@ -1,6 +1,7 @@
 import React    from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import axios from 'axios';
 
 import GigsIndex from './components/gigs/GigsIndex';
 import Login from './components/auth/Login';

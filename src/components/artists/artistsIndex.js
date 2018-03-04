@@ -19,13 +19,6 @@ class GigsIndex extends React.Component {
   render() {
     return (
       <div>
-        <div>
-          <button>
-            <Link to="/gigs/new">
-            Add Gig
-            </Link>
-          </button>
-        </div>
         {this.state.gigs.map(gig => {
           return(
             <div key={gig.id}>

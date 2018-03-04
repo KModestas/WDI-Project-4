@@ -40,6 +40,7 @@ function gigsDelete(req, res, next) {
     .catch(next);
 }
 
+
 module.exports = {
   index: gigsIndex,
   show: gigsShow,
