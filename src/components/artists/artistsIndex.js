@@ -7,7 +7,9 @@ import { Link } from 'react-router-dom';
 
 class artistsIndex extends React.Component {
   state = {
-    gigs: []
+    gigs: {
+      results: []
+    }
   }
 
   componentDidMount() {
@@ -23,16 +25,18 @@ class artistsIndex extends React.Component {
     return (
       <div>
         <p>index page</p>
-        {/* <input type="text" artist={this.state.artist} onChange={handleRequest} /> */}
-        {/* {this.state.gigs.map(gig => {
+
+        {this.state.gigs.results.map(gig => {
           return(
             <div key={gig.id}>
+              <h3>{gig.eventname}</h3>
               <Link to={`/gigs/${gig.id}`}>
-                <img src={gig.image} />
+                <img src={gig.largeimageurl
+                } />
               </Link>
             </div>
           );
-        })} */}
+        })}
       </div>
     );
   }
