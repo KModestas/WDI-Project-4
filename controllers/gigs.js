@@ -10,9 +10,10 @@ function gigsIndex(req, res) {
     json: true, // asking for json format back from their api
     qs: {
       api_key: process.env.SKIDDLE_API_KEY,
-      latitude: 51.02,
-      longitude: -0.12,
-      radius: 5
+      latitude: 51.515030,
+      longitude: -0.073162,
+      radius: 5,
+      eventcode: 'LIVE'
     }
   })
     .then((response) => {
