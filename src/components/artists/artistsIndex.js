@@ -4,22 +4,24 @@ import { Link } from 'react-router-dom';
 
 // import Auth from '../../lib/Auth';
 
-class GigsIndex extends React.Component {
+
+class artistsIndex extends React.Component {
   state = {
-    gigs: []
+    artist: []
   }
 
-  componentDidMount() {
+  componentWillMount() {
     Axios
-      .get('/api/gigs')
-      .then(res => this.setState({ gigs: res.data }))
+      .get(`https://rest.bandsintown.com/artists/${this.props.artist}/events?app_id=euphoria`)
+      .then(res => this.setState({ artist: res.data }))
       .catch(err => console.log(err));
   }
 
   render() {
     return (
       <div>
-        {this.state.gigs.map(gig => {
+        <input type="text" artist={this.state.artist} onChange={handleRequest} />
+        {/* {this.state.gigs.map(gig => {
           return(
             <div key={gig.id}>
               <Link to={`/gigs/${gig.id}`}>
@@ -27,10 +29,10 @@ class GigsIndex extends React.Component {
               </Link>
             </div>
           );
-        })}
+        })} */}
       </div>
     );
   }
 }
 
-export default GigsIndex;
+export default artistsIndex;

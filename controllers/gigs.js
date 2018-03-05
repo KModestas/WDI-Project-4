@@ -19,19 +19,19 @@ function gigsShow(req, res, next) {
     .catch(next);
 }
 
-function gigsCreate(req, res, next) {
-  Gig
-    .create(req.body)
-    .then(gig => res.status(201).json(gig))
-    .catch(next);
-}
-
-function gigsUpdate(req, res, next) {
-  Gig
-    .findByIdAndUpdate(req.params.id, req.body, { new: true })
-    .then(gig => res.status(200).json(gig))
-    .catch(next);
-}
+// function gigsCreate(req, res, next) {
+//   Gig
+//     .create(req.body)
+//     .then(gig => res.status(201).json(gig))
+//     .catch(next);
+// }
+//
+// function gigsUpdate(req, res, next) {
+//   Gig
+//     .findByIdAndUpdate(req.params.id, req.body, { new: true })
+//     .then(gig => res.status(200).json(gig))
+//     .catch(next);
+// }
 
 function gigsDelete(req, res, next) {
   Gig
