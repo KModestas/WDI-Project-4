@@ -19,28 +19,24 @@ class GigsShow extends Component {
   componentDidMount() {
     Axios
       .get(`/api/gigs/${this.props.match.params.id}`)
-      .then(res => this.setState({ gig: res.data }))
+      .then(res => this.setState({ gig: res.data.results }), ()=> {
+        console.log(this.state.gig);
+      })
       .catch(err => console.log(err));
   }
 
   render() {
     return(
       <div>
+        <p>Show Page</p>
         <div>
-          <img src={this.state.gig.image} />
-        </div>
-        <div>
-          <h2>{ this.state.gig.title}</h2>
-          <h3>{ this.state.gig.location }</h3>
+          <h3>{this.state.gig.eventname}</h3>
+          
+
           <h3>{ this.state.gig.date }</h3>
 
-          <button>
-            <Link to={`/gigs/${this.state.gig.id}/edit`} >
-                Edit
-            </Link>
-          </button>
-          <button onClick={this.deleteGig}>
-             Delete
+          <button onClick={this.trackGig}>
+             Track
           </button>
         </div>
       </div>

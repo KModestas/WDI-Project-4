@@ -5,17 +5,15 @@ import { Link } from 'react-router-dom';
 // import Auth from '../../lib/Auth';
 
 
-class artistsIndex extends React.Component {
+class GigsIndex extends React.Component {
   state = {
-    gigs: {
-      results: []
-    }
+    gigs: []
   }
 
   componentDidMount() {
     Axios
       .get('/api/gigs')
-      .then(res => this.setState({ gigs: res.data }, ()=> {
+      .then(res => this.setState({ gigs: res.data.results }, ()=> {
         console.log(this.state.gigs);
       }))
       .catch(err => console.log(err));
@@ -26,7 +24,7 @@ class artistsIndex extends React.Component {
       <div>
         <p>index page</p>
 
-        {this.state.gigs.results.map(gig => {
+        {this.state.gigs.map(gig => {
           return(
             <div key={gig.id}>
               <h3>{gig.eventname}</h3>
@@ -42,4 +40,4 @@ class artistsIndex extends React.Component {
   }
 }
 
-export default artistsIndex;
+export default GigsIndex;

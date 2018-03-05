@@ -17,6 +17,8 @@ const Navbar = ({ history }) => {
       {' '}
       { !Auth.isAuthenticated() && <Link to="/register">Register</Link> }
       {' '}
+      { Auth.isAuthenticated() && <Link to="/"> Profile </Link> }
+      {' '}
       { Auth.isAuthenticated() && <a href="#" onClick={logout}>Logout</a> }
     </nav>
   );
