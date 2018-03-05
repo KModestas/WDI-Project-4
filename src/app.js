@@ -1,7 +1,7 @@
 import React    from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Axios from 'axios';
+// import Axios from 'axios';
 
 import ArtistsIndex from './components/artists/ArtistsIndex';
 import Login from './components/auth/Login';

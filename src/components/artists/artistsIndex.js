@@ -7,20 +7,23 @@ import { Link } from 'react-router-dom';
 
 class artistsIndex extends React.Component {
   state = {
-    artist: []
+    gigs: []
   }
 
-  componentWillMount() {
+  componentDidMount() {
     Axios
-      .get(`https://rest.bandsintown.com/artists/${this.props.artist}/events?app_id=euphoria`)
-      .then(res => this.setState({ artist: res.data }))
+      .get('/api/gigs')
+      .then(res => this.setState({ gigs: res.data }, ()=> {
+        console.log(this.state.gigs);
+      }))
       .catch(err => console.log(err));
   }
 
   render() {
     return (
       <div>
-        <input type="text" artist={this.state.artist} onChange={handleRequest} />
+        <p>index page</p>
+        {/* <input type="text" artist={this.state.artist} onChange={handleRequest} /> */}
         {/* {this.state.gigs.map(gig => {
           return(
             <div key={gig.id}>

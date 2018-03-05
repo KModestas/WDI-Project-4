@@ -9,12 +9,12 @@ class GigsShow extends Component {
     gig: {}
   }
 
-  deleteGig = () => {
-    Axios
-      .delete(`/api/gigs/${this.props.match.params.id}`)
-      .then(() => this.props.history.push('/'))
-      .catch(err => console.log(err));
-  }
+  // deleteGig = () => {
+  //   Axios
+  //     .delete(`/api/gigs/${this.props.match.params.id}`)
+  //     .then(() => this.props.history.push('/'))
+  //     .catch(err => console.log(err));
+  // }
 
   componentDidMount() {
     Axios

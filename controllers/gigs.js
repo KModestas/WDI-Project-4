@@ -1,22 +1,40 @@
-const Gig = require('../models/gig');
+// const Gig = require('../models/gig');
+const rp = require('request-promise');
 
-function gigsIndex(req, res, next) {
-  Gig
-    .find()
-    .exec()
-    .then(gigs => res.json(gigs))
-    .catch(next);
+function gigsIndex(req, res) {
+  // put in here a request to the skiddle api that shows all events in london and returns it as json
+
+  rp({
+    url: 'http://www.skiddle.com/api/v1/events/search',
+    method: 'GET',
+    json: true, // asking for json format back from their api
+    qs: {
+      api_key: process.env.SKIDDLE_API_KEY,
+      latitude: 51.02,
+      longitude: -0.12,
+      radius: 5
+    }
+  })
+    .then((response) => {
+      res.json(response); // res is sending the data to client side
+    })
+    .catch((err) => {
+      res.json(err);
+    });
 }
 
+
 function gigsShow(req, res, next) {
-  Gig
-    .findById(req.params.id)
-    .exec()
-    .then((gig) => {
-      if(!gig) return res.notFound();
-      res.json(gig);
-    })
-    .catch(next);
+  // put in here a request to the skiddle api that shows one event and returns it as json
+
+  // Gig
+  //   .findById(req.params.id)
+  //   .exec()
+  //   .then((gig) => {
+  //     if(!gig) return res.notFound();
+  //     res.json(gig);
+  //   })
+  //   .catch(next);
 }
 
 // function gigsCreate(req, res, next) {
@@ -44,7 +62,7 @@ function gigsDelete(req, res, next) {
 module.exports = {
   index: gigsIndex,
   show: gigsShow,
-  create: gigsCreate,
-  update: gigsUpdate,
+  // create: gigsCreate,
+  // update: gigsUpdate,
   delete: gigsDelete
 };

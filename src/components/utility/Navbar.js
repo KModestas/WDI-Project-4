@@ -12,7 +12,7 @@ const Navbar = ({ history }) => {
 
   return(
     <nav>
-      {  <h1><Link to="/">Euphoria</Link></h1> }
+      {  <h1><Link to="/">EUPHORIA</Link></h1> }
       { !Auth.isAuthenticated() && <Link to="/login">Login</Link>}
       {' '}
       { !Auth.isAuthenticated() && <Link to="/register">Register</Link> }
