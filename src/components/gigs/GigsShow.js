@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
-
+import Auth from '../../lib/Auth';
 
 
 class GigsShow extends Component {
   state = {
-    gig: {}
+    gig: {
+      venue: {}
+    },
+    user: {
+      gigs: []
+    }
   }
 
   // deleteGig = () => {
@@ -23,7 +28,42 @@ class GigsShow extends Component {
         console.log(this.state.gig);
       })
       .catch(err => console.log(err));
+    Axios
+      .get('/api/profile', {
+        headers: { Authorization: `Bearer ${Auth.getToken()}`}
+      })
+      .then(res => this.setState({
+        user: res.data
+      }))
+      .catch(err => console.log(err));
   }
+
+  userHasFavourited = () => {
+    return this.state.user.gigs.length && this.state.user.gigs.some(gig => {
+      // return true if one of the users gigs matches the skiddle id in the url
+      return gig.skiddleId === this.props.match.params.id;
+    });
+  }
+
+  trackGig = () => {
+    console.log('clicked');
+    console.log(this.state.gig);
+    const gig = {
+      name: this.state.gig.eventname,
+      skiddleId: this.state.gig.id,
+      image: this.state.gig.largeimageurl
+    };
+
+    Axios
+      .post('/api/gigs/favourite', gig, {
+        headers: { Authorization: `Bearer ${Auth.getToken()}`}
+      })
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => console.log(err));
+  }
+
 
   render() {
     return(
@@ -31,13 +71,15 @@ class GigsShow extends Component {
         <p>Show Page</p>
         <div>
           <h3>{this.state.gig.eventname}</h3>
-          
-
+          <img src={this.state.gig.largeimageurl
+          } />
           <h3>{ this.state.gig.date }</h3>
+          <h4>Entry Price: { this.state.gig.entryprice }</h4>
+          <h4>{ this.state.gig.venue.name }</h4>
 
-          <button onClick={this.trackGig}>
+          {!this.userHasFavourited() && <button onClick={this.trackGig}>
              Track
-          </button>
+          </button>}
         </div>
       </div>
     );

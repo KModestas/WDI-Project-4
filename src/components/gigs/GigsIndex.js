@@ -27,7 +27,9 @@ class GigsIndex extends React.Component {
         {this.state.gigs.map(gig => {
           return(
             <div key={gig.id}>
-              <h3>{gig.eventname}</h3>
+              <Link to={`/gigs/${gig.id}`}>
+                <h3>{gig.eventname}</h3>
+              </Link>
               <Link to={`/gigs/${gig.id}`}>
                 <img src={gig.largeimageurl
                 } />

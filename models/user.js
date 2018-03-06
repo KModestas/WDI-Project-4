@@ -1,10 +1,27 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
+const gigsSchema = new mongoose.Schema({
+  image: { type: String, required: true },
+  name: { type: String, required: true },
+  skiddleId: { type: String, required: true }
+});
+
+gigsSchema.set('toJSON', {
+  getters: true,
+  virtuals: true,
+  transform(obj, json) {
+    delete json._id;
+    delete json.__v;
+    delete json.password;
+  }
+});
+
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true },
   email: { type: String, required: true, unique: true },
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  gigs: [ gigsSchema ]
 });
 
 userSchema.set('toJSON', {
@@ -24,7 +41,7 @@ userSchema
   });
 
 userSchema.pre('validate', function checkPassword(next) {
-  if(!this._passwordConfirmation || this._passwordConfirmation !== this.password) {
+  if(this.isModified('password') && (!this._passwordConfirmation || this._passwordConfirmation !== this.password)) {
     this.invalidate('passwordConfirmation', 'Passwords do not match');
   }
   next();
