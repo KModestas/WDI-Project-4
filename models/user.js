@@ -4,7 +4,8 @@ const bcrypt = require('bcrypt');
 const gigsSchema = new mongoose.Schema({
   image: { type: String, required: true },
   name: { type: String, required: true },
-  skiddleId: { type: String, required: true }
+  skiddleId: { type: String, required: true },
+  date: { type: String, required: true }
 });
 
 gigsSchema.set('toJSON', {

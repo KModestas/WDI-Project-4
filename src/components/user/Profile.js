@@ -22,9 +22,15 @@ class Profile extends Component {
   render() {
     return(
       <div>
-        <h1>Hello {this.state.user.username}</h1>
+        <h2>Hello {this.state.user.username}, these are all of the Gigs you are tracking.</h2>
         { this.state.user.gigs.map(gig => (
-          <div key={gig.id}><Link to={'/gigs/' + gig.skiddleId}>{ gig.name }</Link></div>
+          <div key={gig.id}>
+            <Link to={'/gigs/' + gig.skiddleId}><h2>{ gig.name }</h2></Link>
+            <img src={gig.image} />
+            <h3>{ gig.date }</h3>
+            {/* <h4>Entry Price: { gig.entryprice }</h4>
+            <h4>Minimum Age: { gig.minage }</h4> */}
+          </div>
         ))
         }
       </div>

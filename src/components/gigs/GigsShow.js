@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Auth from '../../lib/Auth';
 
 
@@ -51,7 +51,8 @@ class GigsShow extends Component {
     const gig = {
       name: this.state.gig.eventname,
       skiddleId: this.state.gig.id,
-      image: this.state.gig.largeimageurl
+      image: this.state.gig.largeimageurl,
+      date: this.state.gig.date
     };
 
     Axios
@@ -74,8 +75,9 @@ class GigsShow extends Component {
           <img src={this.state.gig.largeimageurl
           } />
           <h3>{ this.state.gig.date }</h3>
+          <h4>Venue: { this.state.gig.venue.name }</h4>
           <h4>Entry Price: { this.state.gig.entryprice }</h4>
-          <h4>{ this.state.gig.venue.name }</h4>
+          <p>{ this.state.gig.description }</p>
 
           {!this.userHasFavourited() && <button onClick={this.trackGig}>
              Track
