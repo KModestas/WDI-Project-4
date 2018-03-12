@@ -21,8 +21,8 @@ class Profile extends Component {
 
   render() {
     return(
-      <div>
-        <h2>Hello {this.state.user.username}, these are all of the Gigs you are tracking.</h2>
+      <div className="block">
+        <h2 className="green">Hello {this.state.user.username}, these are all of the Gigs you are tracking!</h2>
         { this.state.user.gigs.map(gig => (
           <div key={gig.id}>
             <Link to={'/gigs/' + gig.skiddleId}><h2>{ gig.name }</h2></Link>

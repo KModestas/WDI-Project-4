@@ -22,21 +22,21 @@ class GigsIndex extends React.Component {
   render() {
     return (
       <div>
-        <p>index page</p>
-
-        {this.state.gigs.map(gig => {
-          return(
-            <div key={gig.id}>
-              <Link to={`/gigs/${gig.id}`}>
-                <h3>{gig.eventname}</h3>
-              </Link>
-              <Link to={`/gigs/${gig.id}`}>
-                <img src={gig.largeimageurl
-                } />
-              </Link>
-            </div>
-          );
-        })}
+        <div className="block">
+          {this.state.gigs.map(gig => {
+            return(
+              <div key={gig.id}>
+                <Link to={`/gigs/${gig.id}`}>
+                  <h3>{gig.eventname}</h3>
+                </Link>
+                <Link to={`/gigs/${gig.id}`}>
+                  <img src={gig.largeimageurl
+                  } />
+                </Link>
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }

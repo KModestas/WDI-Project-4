@@ -21,7 +21,6 @@ class App extends React.Component {
         <div>
           <header>
             <Navbar />
-            <h2> Live Music In London </h2>
           </header>
           <main>
             <Route path="/login" component={Login} />

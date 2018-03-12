@@ -69,15 +69,14 @@ class GigsShow extends Component {
   render() {
     return(
       <div>
-        <p>Show Page</p>
-        <div>
+        <div className="block">
           <h3>{this.state.gig.eventname}</h3>
           <img src={this.state.gig.largeimageurl
           } />
-          <h3>{ this.state.gig.date }</h3>
-          <h4>Venue: { this.state.gig.venue.name }</h4>
-          <h4>Entry Price: { this.state.gig.entryprice }</h4>
-          <p>{ this.state.gig.description }</p>
+          <h3 className="offYellow">{ this.state.gig.date }</h3>
+          <h4 className="offYellow">Venue: { this.state.gig.venue.name }</h4>
+          <h4 className="offYellow">Entry Price: { this.state.gig.entryprice }</h4>
+          <p className="offYellow">{ this.state.gig.description }</p>
 
           {!this.userHasFavourited() && <button onClick={this.trackGig}>
              Track

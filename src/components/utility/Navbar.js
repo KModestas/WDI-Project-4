@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+// import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
 import Auth from '../../lib/Auth';
 
@@ -12,14 +13,15 @@ const Navbar = ({ history }) => {
 
   return(
     <nav>
-      {  <h1><Link to="/">EUPHORIA</Link></h1> }
-      { !Auth.isAuthenticated() && <Link to="/login">Login</Link>}
+      {  <h1 className="darkBackground"><Link to="/">EUPHORIA</Link></h1> }
+      { <h2 className="darkBackground"> Live Music In London </h2>}
+      { !Auth.isAuthenticated() && <Link className="navLinks darkBackground" to="/login">Login</Link>}
       {' '}
-      { !Auth.isAuthenticated() && <Link to="/register">Register</Link> }
+      { !Auth.isAuthenticated() && <Link className="navLinks darkBackground" to="/register">Register</Link> }
       {' '}
-      { Auth.isAuthenticated() && <Link to="/profile"> Profile </Link> }
+      { Auth.isAuthenticated() && <Link className="navLinks darkBackground" to="/profile"> Profile </Link> }
       {' '}
-      { Auth.isAuthenticated() && <a href="#" onClick={logout}>Logout</a> }
+      { Auth.isAuthenticated() && <a className="navLinks darkBackground" href="#" onClick={logout}>Logout</a> }
     </nav>
   );
 };
