@@ -39,3 +39,7 @@ class Profile extends Component {
 }
 
 export default Profile;
+
+// first makes axios request to profile route in backend, sends the token in the header so that it can bypass the secureRoute.
+// runs the users show function in backend which finds the current user in DB using the id (has access to id from the secureroute) then returns the user data as JSON.
+// this gives us access to all the referenced gigs schema on the user schema.

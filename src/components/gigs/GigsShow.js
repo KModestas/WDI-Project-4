@@ -21,6 +21,7 @@ class GigsShow extends Component {
   //     .catch(err => console.log(err));
   // }
 
+  // gets single gig from skiddle api
   componentDidMount() {
     Axios
       .get(`/api/gigs/${this.props.match.params.id}`)
@@ -28,6 +29,8 @@ class GigsShow extends Component {
         console.log(this.state.gig);
       })
       .catch(err => console.log(err));
+
+    // gets users gigs (favourited gigs) in order to allow us to see wether this gig is in the users favourites down below
     Axios
       .get('/api/profile', {
         headers: { Authorization: `Bearer ${Auth.getToken()}`}
@@ -38,15 +41,15 @@ class GigsShow extends Component {
       .catch(err => console.log(err));
   }
 
+  // if user has gigs, it will some over them
   userHasFavourited = () => {
     return this.state.user.gigs.length && this.state.user.gigs.some(gig => {
-      // return true if one of the users gigs matches the skiddle id in the url
+      // and return true if one of the users gigs matches the skiddle id in the url which will allow us to hide the track button below
       return gig.skiddleId === this.props.match.params.id;
     });
   }
 
   trackGig = () => {
-    console.log('clicked');
     console.log(this.state.gig);
     const gig = {
       name: this.state.gig.eventname,
@@ -65,6 +68,11 @@ class GigsShow extends Component {
       .catch(err => console.log(err));
   }
 
+  // makes post request which pushes the content of the gig into the user gigs array.
+
+  unTrackGig = () => {
+    console.log('clicked');
+  }
 
   render() {
     return(
@@ -77,9 +85,12 @@ class GigsShow extends Component {
           <h4 className="offYellow">Venue: { this.state.gig.venue.name }</h4>
           <h4 className="offYellow">Entry Price: { this.state.gig.entryprice }</h4>
           <p className="offYellow">{ this.state.gig.description }</p>
-
+          {/*  if user has not favourites, display the track button */}
           {!this.userHasFavourited() && <button onClick={this.trackGig}>
              Track
+          </button>}
+          {this.userHasFavourited() && <button onClick={this.unTrackGig}>
+             Untrack
           </button>}
         </div>
       </div>

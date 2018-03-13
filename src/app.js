@@ -1,4 +1,4 @@
-import React    from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // import Axios from 'axios';
@@ -37,6 +37,10 @@ class App extends React.Component {
   }
 }
 
+// switch only activates the first route it matches with
+
+
+// attaches your app to the root div in index.html
 ReactDOM.render(
   <App />,
   document.getElementById('root')

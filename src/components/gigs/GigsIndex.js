@@ -42,4 +42,6 @@ class GigsIndex extends React.Component {
   }
 }
 
+// link passes in the id of the gig so that it can also be accessed in GigsShow component as props
+
 export default GigsIndex;
