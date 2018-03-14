@@ -25,7 +25,7 @@ function gigsIndex(req, res) {
 }
 
 
-function gigsShow(req, res, next) {
+function gigsShow(req, res) {
   // put in here a request to the skiddle api that shows one event and returns it as json
 
   rp({

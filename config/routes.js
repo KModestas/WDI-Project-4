@@ -11,7 +11,8 @@ router.route('/profile')
   .get(secureRoute, users.show);
 
 router.route('/gigs/favourite')
-  .post(secureRoute, users.favouriteGig);
+  .post(secureRoute, users.favouriteGig)
+  .put(secureRoute, users.unTrackGig);
 
 router.route('/gigs')
   .get(gigs.index);

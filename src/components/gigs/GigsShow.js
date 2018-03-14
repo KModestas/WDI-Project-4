@@ -49,6 +49,8 @@ class GigsShow extends Component {
     });
   }
 
+  // makes post request which pushes the content of the gig into the user gigs array.
+
   trackGig = () => {
     console.log(this.state.gig);
     const gig = {
@@ -57,7 +59,6 @@ class GigsShow extends Component {
       image: this.state.gig.largeimageurl,
       date: this.state.gig.date
     };
-
     Axios
       .post('/api/gigs/favourite', gig, {
         headers: { Authorization: `Bearer ${Auth.getToken()}`}
@@ -68,10 +69,21 @@ class GigsShow extends Component {
       .catch(err => console.log(err));
   }
 
-  // makes post request which pushes the content of the gig into the user gigs array.
 
   unTrackGig = () => {
     console.log('clicked');
+
+    const gig = {
+      id: this.state.gig.id
+    };
+    Axios
+      .put('/api/gigs/favourite', gig, {
+        headers: { Authorization: `Bearer ${Auth.getToken()}`}
+      })
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => console.log(err));
   }
 
   render() {
