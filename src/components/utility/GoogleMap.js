@@ -20,6 +20,12 @@ class GoogleMap extends React.Component {
     });
   }
 
+  componentWillUnmount() {
+    this.marker.setMap(null);
+    this.marker = null;
+    this.map = null;
+  }
+
   render() {
     return (
       <div className='google-map' ref={element => this.mapCanvas = element}></div>
