@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 // import { Link } from 'react-router-dom';
 import Auth from '../../lib/Auth';
+import GoogleMap from '../utility/GoogleMap';
 
 
 class GigsShow extends Component {
@@ -11,7 +12,8 @@ class GigsShow extends Component {
     },
     user: {
       gigs: []
-    }
+    },
+    center: { lat: 52.3755, lng: -2.317 }
   }
 
   // deleteGig = () => {
@@ -105,6 +107,7 @@ class GigsShow extends Component {
              Untrack
           </button>}
         </div>
+        <GoogleMap center={this.state.center} />
       </div>
     );
   }
