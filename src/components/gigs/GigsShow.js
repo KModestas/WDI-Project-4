@@ -13,7 +13,7 @@ class GigsShow extends Component {
     user: {
       gigs: []
     },
-    center: { lat: 52.3755, lng: -2.317 }
+    center: { lat: 51.5074, lng: 0.1277 }
   }
 
   // deleteGig = () => {
