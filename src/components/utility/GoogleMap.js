@@ -12,6 +12,12 @@ class GoogleMap extends React.Component {
       clickableIcons: false,
       disableDefaultUI: true
     });
+
+    this.marker = new google.maps.Marker({
+      map: this.map,
+      position: this.props.center || { lat: 51.51, lng: -0.09 },
+      animation: google.maps.Animation.DROP
+    });
   }
 
   render() {
