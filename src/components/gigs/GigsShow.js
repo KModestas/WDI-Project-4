@@ -32,6 +32,8 @@ class GigsShow extends Component {
       })
       .catch(err => console.log(err));
 
+
+
     // gets users gigs (favourited gigs) in order to allow us to see wether this gig is in the users favourites down below
     Axios
       .get('/api/profile', {
@@ -41,6 +43,8 @@ class GigsShow extends Component {
         user: res.data
       }))
       .catch(err => console.log(err));
+
+
   }
 
   // if user has gigs, it will some over them
@@ -73,7 +77,6 @@ class GigsShow extends Component {
 
 
   unTrackGig = () => {
-    console.log('clicked');
 
     const gig = {
       id: this.state.gig.id
@@ -108,6 +111,8 @@ class GigsShow extends Component {
           </button>}
         </div>
         <GoogleMap center={this.state.center} />
+        {console.log(this.state.gig.venue.latitude)}
+        {console.log(this.state.gig.venue.longitude)}
       </div>
     );
   }

@@ -22,6 +22,7 @@ class GigsIndex extends React.Component {
   render() {
     return (
       <div>
+        <input type="search" />
         <div className="block">
           {this.state.gigs.map(gig => {
             return(
