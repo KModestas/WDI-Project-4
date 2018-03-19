@@ -19,6 +19,7 @@ function unTrackGig(req, res, next) {
 
   const gig = req.body;
 
+
   User
     .findById(req.currentUser.id)
     .then(user => {
@@ -27,7 +28,7 @@ function unTrackGig(req, res, next) {
       const index = user.gigs.indexOf(gig);
       user.gigs.splice(index, 1);
 
-      return user.gigs.save();
+      return user.save();
       // user.gigs.map( gig => {
       //   if (gig.id === req.body) {
       //     user.gigs.splice(gig);

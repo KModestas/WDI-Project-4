@@ -77,7 +77,7 @@ class GigsShow extends Component {
 
 
   unTrackGig = () => {
-
+    console.log(this.state.gig.id);
     const gig = {
       id: this.state.gig.id
     };
