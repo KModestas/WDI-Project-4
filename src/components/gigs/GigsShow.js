@@ -16,12 +16,6 @@ class GigsShow extends Component {
     center: { lat: 51.5074, lng: 0.1277 }
   }
 
-  // deleteGig = () => {
-  //   Axios
-  //     .delete(`/api/gigs/${this.props.match.params.id}`)
-  //     .then(() => this.props.history.push('/'))
-  //     .catch(err => console.log(err));
-  // }
 
   // gets single gig from skiddle api
   componentDidMount() {
@@ -48,7 +42,7 @@ class GigsShow extends Component {
   }
 
   // if user has gigs, it will some over them
-  userHasFavourited = () => {
+  userIsTracking = () => {
     return this.state.user.gigs.length && this.state.user.gigs.some(gig => {
       // and return true if one of the users gigs matches the skiddle id in the url which will allow us to hide the track button below
       return gig.skiddleId === this.props.match.params.id;
@@ -66,7 +60,7 @@ class GigsShow extends Component {
       date: this.state.gig.date
     };
     Axios
-      .post('/api/gigs/favourite', gig, {
+      .post('/api/gigs/track', gig, {
         headers: { Authorization: `Bearer ${Auth.getToken()}`}
       })
       .then(res => {
@@ -82,7 +76,7 @@ class GigsShow extends Component {
       id: this.state.gig.id
     };
     Axios
-      .put('/api/gigs/favourite', gig, {
+      .put('/api/gigs/track', gig, {
         headers: { Authorization: `Bearer ${Auth.getToken()}`}
       })
       .then(res => {
@@ -103,10 +97,10 @@ class GigsShow extends Component {
           <h4 className="offYellow">Entry Price: { this.state.gig.entryprice }</h4>
           <p className="offYellow">{ this.state.gig.description }</p>
           {/*  if user has not favourites, display the track button */}
-          {!this.userHasFavourited() && <button onClick={this.trackGig}>
+          {!this.userIsTracking() && <button onClick={this.trackGig}>
              Track
           </button>}
-          {this.userHasFavourited() && <button onClick={this.unTrackGig}>
+          {this.userIsTracking() && <button onClick={this.unTrackGig}>
              Untrack
           </button>}
         </div>

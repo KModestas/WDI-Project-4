@@ -1,7 +1,7 @@
 const User = require('../models/user');
 
 
-function favouriteGig(req, res, next) {
+function TrackGig(req, res, next) {
   User
     .findById(req.currentUser.id)
     .then(user => {
@@ -19,7 +19,6 @@ function unTrackGig(req, res, next) {
 
   const gig = req.body;
 
-
   User
     .findById(req.currentUser.id)
     .then(user => {
@@ -29,12 +28,6 @@ function unTrackGig(req, res, next) {
       user.gigs.splice(index, 1);
 
       return user.save();
-      // user.gigs.map( gig => {
-      //   if (gig.id === req.body) {
-      //     user.gigs.splice(gig);
-      //   }
-      //   return user.save();
-      // });
     })
     .then(user => {
       res.json(user);
@@ -42,6 +35,12 @@ function unTrackGig(req, res, next) {
     .catch(next);
 
 }
+
+// * unTrackGig
+// stores the gig id sent from the put request in GigsShow untrackGig id in gig constant
+// then finds the Users Id (which it has access to from secure route)
+// then finds the index of the gig in users gigs array
+// then splices that gig from the array and saves the user schema
 
 
 function show(req, res, next) {
@@ -55,7 +54,7 @@ function show(req, res, next) {
 }
 
 module.exports = {
-  favouriteGig,
+  TrackGig,
   unTrackGig,
   show
 };

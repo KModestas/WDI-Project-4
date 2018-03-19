@@ -10,8 +10,8 @@ const users = require('../controllers/users');
 router.route('/profile')
   .get(secureRoute, users.show);
 
-router.route('/gigs/favourite')
-  .post(secureRoute, users.favouriteGig)
+router.route('/gigs/track')
+  .post(secureRoute, users.TrackGig)
   .put(secureRoute, users.unTrackGig);
 
 router.route('/gigs')
