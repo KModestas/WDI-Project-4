@@ -1,6 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
+import SearchBar from '../utility/SearchBar';
 
 // import Auth from '../../lib/Auth';
 
@@ -22,7 +23,7 @@ class GigsIndex extends React.Component {
   render() {
     return (
       <div>
-        <input type="search" />
+        <SearchBar />
         <div className="block">
           {this.state.gigs.map(gig => {
             return(

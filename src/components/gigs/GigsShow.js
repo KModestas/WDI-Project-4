@@ -86,6 +86,8 @@ class GigsShow extends Component {
   }
 
   render() {
+    // const latitude = Number(this.state.gig.venue.latitude);
+    // const longitude = Number(this.state.gig.venue.longitude);
     return(
       <div>
         <div className="block">
@@ -104,9 +106,9 @@ class GigsShow extends Component {
              Untrack
           </button>}
         </div>
-        <GoogleMap center={this.state.center} />
-        {console.log(this.state.gig.venue.latitude)}
-        {console.log(this.state.gig.venue.longitude)}
+        <GoogleMap center={this.state.center}/>
+        {/* {console.log(latitude)}
+        {console.log(longitude)} */}
       </div>
     );
   }
