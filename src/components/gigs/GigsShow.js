@@ -107,8 +107,6 @@ class GigsShow extends Component {
           </button>}
         </div>
         <GoogleMap center={this.state.center}/>
-        {/* {console.log(latitude)}
-        {console.log(longitude)} */}
       </div>
     );
   }

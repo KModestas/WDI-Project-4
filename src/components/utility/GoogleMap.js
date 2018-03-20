@@ -6,9 +6,10 @@ import mapStyles from '../config/mapStyles';
 
 class GoogleMap extends React.Component {
 
+
   componentDidMount() {
     this.map = new google.maps.Map(this.mapCanvas, {
-      center: this.props.center || { lat: 51.5074, lng: 0.1277 },
+      center: this.props.center || {lat: this.props.lat, lng: this.props.lng},
       zoom: 14,
       clickableIcons: false,
       disableDefaultUI: true,
@@ -17,7 +18,7 @@ class GoogleMap extends React.Component {
 
     this.marker = new google.maps.Marker({
       map: this.map,
-      position: this.props.center || { lat: 51.5074, lng: 0.1277 },
+      position: this.props.center || {lat: this.props.lat, lng: this.props.lng},
       animation: google.maps.Animation.DROP
     });
 
@@ -33,8 +34,6 @@ class GoogleMap extends React.Component {
   render() {
     return (
       <div className='google-map' ref={element => this.mapCanvas = element}>
-        {console.log(this.props.lat)}
-        {console.log(this.props.lng)}
       </div>
 
     );
