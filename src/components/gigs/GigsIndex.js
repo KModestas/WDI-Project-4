@@ -24,19 +24,19 @@ class GigsIndex extends React.Component {
   }
 
 
-
-  loadMore() {
-    const limit = {
-      limit: 50
-    };
-
-    Axios
-      .put('/api/gigs', limit)
-      .then(res => this.setState({ gigs: res.data.results }, ()=> {
-        console.log(res);
-      }))
-      .catch(err => console.log(err));
-  }
+  // 
+  // loadMore() {
+  //   const limit = {
+  //     limit: 50
+  //   };
+  //
+  //   Axios
+  //     .put('/api/gigs', limit)
+  //     .then(res => this.setState({ gigs: res.data.results }, ()=> {
+  //       console.log(res);
+  //     }))
+  //     .catch(err => console.log(err));
+  // }
 
 
 
@@ -74,7 +74,7 @@ class GigsIndex extends React.Component {
             );
           })}
         </div>
-        <button onClick={this.loadMore}>Load More</button>
+        {/* <button onClick={this.loadMore}>Load More</button> */}
       </div>
     );
   }

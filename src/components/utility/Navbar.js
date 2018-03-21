@@ -6,7 +6,7 @@ import Auth from '../../lib/Auth';
 
 const Navbar = ({ history }) => {
 
-  // preventDefault tops refresh. Also ends the session by logging user out and then redirecting them to the homepage. This function is called when you click on the logout button down below.
+  // preventDefault stops refresh. Also ends the session by logging user out and then redirecting them to the homepage. This function is called when you click on the logout button down below.
   function logout(e) {
     e.preventDefault();
     Auth.logout();
@@ -18,6 +18,7 @@ const Navbar = ({ history }) => {
     <nav>
       { <h1 className="darkBackground"><Link to="/">EUPHORIA</Link></h1> }
       { <h2 className="darkBackground"> Live Music In London </h2>}
+      { <Link className="navLinks darkBackground" to="/about">About</Link>}
       { !Auth.isAuthenticated() && <Link className="navLinks darkBackground" to="/login">Login</Link>}
       {' '}
       { !Auth.isAuthenticated() && <Link className="navLinks darkBackground" to="/register">Register</Link> }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
-// import { Link } from 'react-router-dom';
+
+
 import Auth from '../../lib/Auth';
 import GoogleMap from '../utility/GoogleMap';
 
@@ -65,6 +66,7 @@ class GigsShow extends Component {
       })
       .then(res => {
         console.log(res);
+        this.props.history.push('/profile');
       })
       .catch(err => console.log(err));
   }
@@ -81,6 +83,7 @@ class GigsShow extends Component {
       })
       .then(res => {
         console.log(res);
+        this.props.history.push('/profile');
       })
       .catch(err => console.log(err));
   }
