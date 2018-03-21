@@ -24,7 +24,7 @@ class GigsIndex extends React.Component {
   }
 
 
-  // 
+  //
   // loadMore() {
   //   const limit = {
   //     limit: 50

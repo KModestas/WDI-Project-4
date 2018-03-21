@@ -27,7 +27,9 @@ class Profile extends Component {
         { this.state.user.gigs.map(gig => (
           <div key={gig.id}>
             <Link to={'/gigs/' + gig.skiddleId}><h2>{ gig.name }</h2></Link>
-            <img src={gig.image} />
+            <Link to={`/gigs/${gig.skiddleId}`}>
+              <img src={gig.image} />
+            </Link>
             <h3>{ gig.date }</h3>
             {/* <h4>Entry Price: { gig.entryprice }</h4>
             <h4>Minimum Age: { gig.minage }</h4> */}

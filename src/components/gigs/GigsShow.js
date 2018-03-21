@@ -6,6 +6,7 @@ import Auth from '../../lib/Auth';
 import GoogleMap from '../utility/GoogleMap';
 
 
+
 class GigsShow extends Component {
   state = {
     gig: {
