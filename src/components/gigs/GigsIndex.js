@@ -12,7 +12,6 @@ class GigsIndex extends React.Component {
   state = {
     gigs: [],
     query: ''
-
   }
 
   componentDidMount() {
@@ -24,13 +23,35 @@ class GigsIndex extends React.Component {
       .catch(err => console.log(err));
   }
 
+
+
+  loadMore() {
+    const limit = {
+      limit: 50
+    };
+
+    Axios
+      .put('/api/gigs', limit)
+      .then(res => this.setState({ gigs: res.data.results }, ()=> {
+        console.log(res);
+      }))
+      .catch(err => console.log(err));
+  }
+
+
+
   handleSearch = (e) => {
     console.log(e.target.value);
     this.setState({ query: e.target.value });
   }
 
+  // *** FILTERING ***
+  // creating a new regex expression and passing in query (value of input field your type your search in)
+  // 'i' makes it case insensitive
+  // using lodash _filter method to filter over gigs array and using the regex i made to filter for gig.eventname
+
   render() {
-    console.log('LOGGING Q IN RENDER METHOD ======> ', this.state.query);
+    console.log(this.state.query);
     const query = this.state.query;
     const regex = new RegExp(query, 'i');
     const filteredGigs =_.filter(this.state.gigs, (gig) => regex.test(gig.eventname));
@@ -53,6 +74,7 @@ class GigsIndex extends React.Component {
             );
           })}
         </div>
+        <button onClick={this.loadMore}>Load More</button>
       </div>
     );
   }

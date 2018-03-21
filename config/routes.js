@@ -15,7 +15,8 @@ router.route('/gigs/track')
   .put(secureRoute, users.unTrackGig);
 
 router.route('/gigs')
-  .get(gigs.index);
+  .get(gigs.index)
+  .put(gigs.update);
 
 router.route('/gigs/:id')
   .get(gigs.show);
