@@ -11,6 +11,8 @@ import SearchBar from '../utility/SearchBar';
 class GigsIndex extends React.Component {
   state = {
     gigs: [],
+    sortBy: 'eventname',
+    sortDirection: 'asc',
     query: ''
   }
 
@@ -38,10 +40,12 @@ class GigsIndex extends React.Component {
   //     .catch(err => console.log(err));
   // }
 
-
+  handleSort = (e) => {
+    const [sortBy, sortDirection] = e.target.value.split('|');
+    this.setState({ sortBy, sortDirection });
+  }
 
   handleSearch = (e) => {
-    console.log(e.target.value);
     this.setState({ query: e.target.value });
   }
 
@@ -51,14 +55,17 @@ class GigsIndex extends React.Component {
   // using lodash _filter method to filter over gigs array and using the regex i made to filter for gig.eventname
 
   render() {
-    console.log(this.state.query);
-    const query = this.state.query;
+
+    const { sortBy, sortDirection, query } = this.state;
     const regex = new RegExp(query, 'i');
-    const filteredGigs =_.filter(this.state.gigs, (gig) => regex.test(gig.eventname));
+
+    const orderedGigs = _.orderBy(this.state.gigs, [sortBy], [sortDirection]);
+
+    const filteredGigs =_.filter(orderedGigs, (gig) => regex.test(gig.eventname));
 
     return (
       <div>
-        <SearchBar handleSearch={ this.handleSearch } />
+        <SearchBar handleSort={this.handleSort} handleSearch={ this.handleSearch } />
         <div className="block">
           {filteredGigs.map(gig => {
             return(
