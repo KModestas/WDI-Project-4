@@ -21,7 +21,7 @@ class App extends React.Component {
       <BrowserRouter>
         <div>
           <header>
-            <Navbar />
+            <Navbar style={{background: + 'blue'}} />
           </header>
           <main>
             <Route path="/login" component={Login} />
@@ -29,7 +29,7 @@ class App extends React.Component {
             <Switch>
               <Route exact path="/" component={GigsIndex} />
               <Route path="/profile" component={Profile} />
-              <Route path="/gigs/about" component={AboutPage} />
+              <Route path="/about" component={AboutPage} />
               <Route path="/gigs/:id" component={GigsShow} />
             </Switch>
           </main>

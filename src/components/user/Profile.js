@@ -30,7 +30,7 @@ class Profile extends Component {
 
     return(
       <div className="block">
-        <h2 className="green">Hello {this.state.user.username}, these are all of the Gigs you are tracking!</h2>
+        <h2 className="green">Hello {this.state.user.username}, these are all of the Gigs you are tracking (In Order of Date)</h2>
         { orderedGigs.map(gig => (
           <div key={gig.id}>
             <Link to={'/gigs/' + gig.skiddleId}><h2>{ gig.name }</h2></Link>
