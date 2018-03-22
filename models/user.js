@@ -19,11 +19,11 @@ gigsSchema.set('toJSON', {
 });
 
 const userSchema = new mongoose.Schema({
-  username: { type: String, required: true },
+  username: { type: String, required: 'Username is required' },
 
-  email: { type: String, required: true, unique: true },
+  email: { type: String, required: 'Email is required', unique: true },
 
-  password: { type: String, required: true },
+  password: { type: String, required: 'Password is required'},
 
   gigs: [ gigsSchema ]
 });
