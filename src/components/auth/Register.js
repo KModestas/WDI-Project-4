@@ -8,8 +8,6 @@ class Register extends React.Component {
 
   state = {
     user: {
-      firstname: '',
-      lastname: '',
       username: '',
       email: '',
       password: '',
@@ -31,7 +29,7 @@ class Register extends React.Component {
 
         this.props.history.push('/');
       })
-      .catch(err => console.log(err));
+      .catch(err => console.log(err.response.data.errors));
   }
 
   render() {

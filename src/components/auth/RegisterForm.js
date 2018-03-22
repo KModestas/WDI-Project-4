@@ -6,26 +6,6 @@ const RegisterForm = ({ handleChange, handleSubmit, user }) => {
       <div className="form-group">
         <input
           type="text"
-          name="firstname"
-          placeholder="First Name"
-          onChange={handleChange}
-          value={user.firstname}
-          className="form-control"
-        />
-      </div>
-      <div className="form-group">
-        <input
-          type="text"
-          name="lastname"
-          placeholder="Last Name"
-          onChange={handleChange}
-          value={user.lastname}
-          className="form-control"
-        />
-      </div>
-      <div className="form-group">
-        <input
-          type="text"
           name="username"
           placeholder="Username"
           onChange={handleChange}
