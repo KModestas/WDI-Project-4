@@ -22,6 +22,8 @@ const LoginForm = ({ handleChange, handleSubmit, user }) => {
           value={user.password}
           className="form-control"
         />
+        {/* {errors.message && <h1>{errors.message}</h1>} */}
+        {/* {console.log(errors.message)} */}
       </div>
       <button className="main-button">Login</button>
     </form>

@@ -26,16 +26,22 @@ class Login extends React.Component {
         Auth.setToken(res.data.token);
         this.props.history.push('/');
       })
-      .catch(err => console.log(err));
+      .catch(err => console.log(err.response.data.message));
+
+
+    // this.setState({errors: err.response.data.message })
   }
 
   render() {
+    // console.log(this.state.errors);
     return (
       <LoginForm
         user={this.state.user}
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
+        // errors={this.state.errors}
       />
+
     );
   }
 }

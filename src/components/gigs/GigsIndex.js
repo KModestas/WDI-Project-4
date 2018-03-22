@@ -45,6 +45,7 @@ class GigsIndex extends React.Component {
     this.setState({ sortBy, sortDirection });
   }
 
+
   handleSearch = (e) => {
     this.setState({ query: e.target.value });
   }
