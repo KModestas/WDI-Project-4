@@ -5,7 +5,6 @@ import _ from 'lodash';
 
 import SearchBar from '../utility/SearchBar';
 
-// import Auth from '../../lib/Auth';
 
 
 class GigsIndex extends React.Component {
