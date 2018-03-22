@@ -3,6 +3,7 @@ import React from 'react';
 const LoginForm = ({ handleChange, handleSubmit, user, errors }) => {
   return (
     <form onSubmit={handleSubmit}>
+      {errors.message && <p style={{color: 'red'}}>{errors.message}</p>}
       <div className="form-group">
         <input
           type="text"
@@ -22,8 +23,6 @@ const LoginForm = ({ handleChange, handleSubmit, user, errors }) => {
           value={user.password}
           className="form-control"
         />
-        {errors.message && <h1>{errors.message}</h1>}
-        {console.log(errors.message)}
       </div>
       <button className="main-button">Login</button>
     </form>
