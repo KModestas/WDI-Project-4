@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LoginForm = ({ handleChange, handleSubmit, user }) => {
+const LoginForm = ({ handleChange, handleSubmit, user, errors }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="form-group">
@@ -22,8 +22,8 @@ const LoginForm = ({ handleChange, handleSubmit, user }) => {
           value={user.password}
           className="form-control"
         />
-        {/* {errors.message && <h1>{errors.message}</h1>} */}
-        {/* {console.log(errors.message)} */}
+        {errors.message && <h1>{errors.message}</h1>}
+        {console.log(errors.message)}
       </div>
       <button className="main-button">Login</button>
     </form>

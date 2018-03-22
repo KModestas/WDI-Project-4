@@ -10,6 +10,9 @@ class Login extends React.Component {
     user: {
       email: '',
       password: ''
+    },
+    errors: {
+      message: ''
     }
   };
 
@@ -26,20 +29,17 @@ class Login extends React.Component {
         Auth.setToken(res.data.token);
         this.props.history.push('/');
       })
-      .catch(err => console.log(err.response.data.message));
-
-
-    // this.setState({errors: err.response.data.message })
+      .catch(err => this.setState({errors: { message: err.response.data.message }}));
   }
 
   render() {
-    // console.log(this.state.errors);
+    console.log(this.state.errors);
     return (
       <LoginForm
         user={this.state.user}
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
-        // errors={this.state.errors}
+        errors={this.state.errors}
       />
 
     );
