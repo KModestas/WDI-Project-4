@@ -20,9 +20,19 @@ a {
 video {
   height: 100%;
   width: 100%;
-  z-index: -1;
-  margin: 0;
+  position: absolute;
+
 }
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.4);
+  position: absolute;
+  z-index: 1 !important;
+}
+
+// for z index to work element needs to be positioned. also z index is applied to all children so it cannot be applied to a container div
 
 h2 {
   color: white;

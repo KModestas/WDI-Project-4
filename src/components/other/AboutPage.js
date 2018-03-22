@@ -2,8 +2,10 @@ import React from 'react';
 
 const AboutPage =()=> {
   return(
-    <div className="red">
+    <div className="overlay">
       <video src="../assets/concert.mov" autoPlay="true" loop="true" />
+      <div className="overlay">
+      </div>
     </div>
   );
 };
