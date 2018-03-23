@@ -15,7 +15,7 @@ const Navbar = ({ history }) => {
 
   // return different navbar items based on wether or not the user is authenticted (logged in)
   return(
-    <nav>
+    <nav className="getInfront">
       { <h1 className="darkBackground"><Link to="/">EUPHORIA</Link></h1> }
       { <h2 className="darkBackground"> Live Music In London </h2>}
       { <Link className="navLinks darkBackground" to="/about">About</Link>}

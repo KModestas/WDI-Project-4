@@ -10,6 +10,7 @@ import Register from './components/auth/Register';
 import Navbar from './components/utility/Navbar';
 import Profile from './components/user/Profile';
 import AboutPage from './components/other/AboutPage';
+// import MarginDiv from './components/utility/MarginDiv';
 
 
 import './scss/style.scss';
@@ -20,11 +21,9 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div>
-          {/* <header>
-            <Navbar style={{background: + 'blue'}} />
-          </header> */}
+          <Navbar />
+          {/* <MarginDiv /> */}
           <main>
-            <Navbar />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Switch>

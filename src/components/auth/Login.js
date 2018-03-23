@@ -38,12 +38,15 @@ class Login extends React.Component {
   render() {
     console.log(this.state.errors);
     return (
-      <LoginForm
-        user={this.state.user}
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}
-        errors={this.state.errors}
-      />
+      <div>
+        <div className="marginDiv"></div>
+        <LoginForm
+          user={this.state.user}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+          errors={this.state.errors}
+        />
+      </div>
 
     );
   }

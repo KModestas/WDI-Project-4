@@ -94,6 +94,7 @@ class GigsShow extends Component {
     // const longitude = Number(this.state.gig.venue.longitude);
     return(
       <div>
+        <div className="marginDiv"></div>
         <div className="block">
           <h3>{this.state.gig.eventname}</h3>
           <img src={this.state.gig.largeimageurl

@@ -65,6 +65,7 @@ class GigsIndex extends React.Component {
 
     return (
       <div>
+        <div className="marginDiv"></div>
         <SearchBar handleSort={this.handleSort} handleSearch={ this.handleSearch } />
         <div className="block">
           {filteredGigs.map(gig => {

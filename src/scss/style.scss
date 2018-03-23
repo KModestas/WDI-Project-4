@@ -20,16 +20,29 @@ a {
 video {
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
+  z-index: -5;
+  // fully attaches background to the top
+  margin-top: -20px;
 
+}
+
+.marginDiv {
+  height: 180px;
+  width: 100%;
+}
+
+.getInfront {
+  z-index: 2;
+  position: fixed;
 }
 
 .overlay {
   height: 100%;
   width: 100%;
   background: rgba(0,0,0,0.4);
-  position: absolute;
-  z-index: 1 !important;
+  position: fixed;
+  z-index: 1;
 }
 
 // for z index to work element needs to be positioned. also z index is applied to all children so it cannot be applied to a container div
