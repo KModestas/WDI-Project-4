@@ -5,11 +5,6 @@ body {
   background-attachment: fixed;
 }
 
-a {
-  color: white;
-  text-decoration: none;
-  margin: 0 auto;
-}
 
 video {
       position: fixed;
@@ -22,16 +17,49 @@ video {
 
 }
 
+// prevent content going behind the navbar
 .marginDiv {
   height: 180px;
   width: 100%;
 }
 
+// NAVBAR
 .getInfront {
   z-index: 2;
   position: absolute;
   width: 100%;
+
+
+  .navLinks {
+    font-size: 25px;
+    margin: 5px;
+    color: #f6fcde;
+    margin-left: 15px;
+  }
+  .navLinkContainer {
+    display: flex;
+    justify-content: center;
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+  }
+  .headings {
+    color: white;
+    display: flex;
+    justify-content: center;
+    background: rgba(0,0,0,0.6);
+    margin-top: 10px;
+  }
 }
+
+a {
+  color: white;
+  text-decoration: none;
+  // margin: 0 auto;
+}
+
+
+
+
 
 .overlay {
   height: 100%;
@@ -43,9 +71,7 @@ video {
 
 // for z index to work element needs to be positioned. also z index is applied to all children so it cannot be applied to a container div
 
-h2 {
-  color: white;
-}
+
 
 h3 {
   color: #f6fcde;
@@ -60,15 +86,10 @@ h3 {
 
 }
 
-.darkBackground {
-  background: rgba(0,0,0,0.7);
-  text-align: center;
-}
+// .darkBackground {
+//   background: rgba(0,0,0,0.7);
+// }
 
-.navLinks {
-  font-size: 25px;
-  margin: 5px;
-}
 
 .green {
   color: #d8fcd6;
