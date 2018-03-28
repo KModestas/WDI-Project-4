@@ -59,7 +59,14 @@ a {
 
 
 
-
+.aboutText {
+  color: white;
+  width: 700px;
+  margin: 300px auto;
+  font-size: 28px;
+ text-align: center;
+ text-shadow: 3px 3px #000000;
+}
 
 .overlay {
   height: 100%;
@@ -75,6 +82,15 @@ a {
 
 h3 {
   color: #f6fcde;
+}
+
+.proceed {
+  background: rgba(0,0,0,0.6);
+  padding: 10px;
+  border: 2px solid white;
+  border-radius: 10px;
+  position: relative;
+  top: 30px;
 }
 
 
