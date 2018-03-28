@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import 'react-bootstrap';
 // import Axios from 'axios';
 
 import GigsIndex from './components/gigs/GigsIndex';
@@ -10,7 +11,7 @@ import Register from './components/auth/Register';
 import Navbar from './components/utility/Navbar';
 import Profile from './components/user/Profile';
 import HomePage from './components/other/HomePage';
-// import MarginDiv from './components/utility/MarginDiv';
+
 
 
 import './scss/style.scss';
@@ -22,15 +23,15 @@ class App extends React.Component {
       <BrowserRouter>
         <div>
           <Navbar />
-          {/* <MarginDiv /> */}
           <main>
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Switch>
               <Route exact path="/" component={HomePage} />
+              <Route path="/gigs/:id" component={GigsShow} />
               <Route path="/gigs" component={GigsIndex} />
               <Route path="/profile" component={Profile} />
-              <Route path="/gigs/:id" component={GigsShow} />
+
             </Switch>
           </main>
         </div>
