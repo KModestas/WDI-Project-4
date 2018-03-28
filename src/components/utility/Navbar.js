@@ -18,7 +18,7 @@ const Navbar = ({ history }) => {
     <nav className="getInfront">
       { <h1 className="darkBackground headings"><Link to="/">EUPHORIA</Link></h1> }
       { <h2 className="darkBackground headings"> Live Music In London </h2>}
-      <div className="navLinkContainer">{ <Link className="navLinks darkBackground" to="/about">Gigs</Link>}
+      <div className="navLinkContainer">{ <Link className="navLinks darkBackground" to="/gigs">Gigs</Link>}
         { !Auth.isAuthenticated() && <Link className="navLinks darkBackground" to="/login">Login</Link>}
         {' '}
         { !Auth.isAuthenticated() && <Link className="navLinks darkBackground" to="/register">Register</Link> }
