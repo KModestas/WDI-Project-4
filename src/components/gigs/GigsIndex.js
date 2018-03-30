@@ -72,19 +72,19 @@ class GigsIndex extends React.Component {
         <div className="row justify-content-center align-items-center">
           {filteredGigs.map(gig => {
             return(
-              <div className="block">
-              <div className="col-md-4 col-lg-12">
-                <Link to={`/gigs/${gig.id}`}>
-                  <h3>{gig.eventname}</h3>
-                </Link>
+              <div key={gig.id} className="block">
+                <div className="col-lg-12">
+                  <Link to={`/gigs/${gig.id}`}>
+                    <h3>{gig.eventname}</h3>
+                  </Link>
+                </div>
+                <div className=" col-lg-3">
+                  <Link to={`/gigs/${gig.id}`}>
+                    <img src={gig.largeimageurl
+                    } />
+                  </Link>
+                </div>
               </div>
-              <div key={gig.id} className="col-md-4 col-lg-3">
-                <Link to={`/gigs/${gig.id}`}>
-                  <img src={gig.largeimageurl
-                  } />
-                </Link>
-              </div>
-            </div>
             );
           })}
         </div>

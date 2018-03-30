@@ -81,12 +81,6 @@ a {
 
 
 
-h3 {
-  color: #f6fcde;
-  max-width: 200px;
-  max-height: 200px;
-}
-
 .proceed {
   background: rgba(0,0,0,0.6);
   padding: 10px;
@@ -97,8 +91,18 @@ h3 {
 }
 
 
+// individual Gigs
+
 .block {
-  padding: 5px;
+  padding: 10px;
+  margin: 5px;
+
+  h3 {
+    color: #f6fcde;
+    max-width: 200px;
+    max-height: 200px;
+    text-shadow: 0 0 10px #000000, 0 0 10px #aa00ff;
+  }
 
 }
 
@@ -123,7 +127,13 @@ h3 {
 }
 
 // filtering on index page
-.filtering {
+.order {
   padding: 20px;
   margin-bottom: 30px;
+  margin-left: 80px;
+
+  .sorting {
+    margin-right: 20px;
+    margin-bottom: 15px;
+  }
 }
