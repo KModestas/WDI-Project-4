@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import 'react-bootstrap';
 // import Axios from 'axios';
 
 import GigsIndex from './components/gigs/GigsIndex';
