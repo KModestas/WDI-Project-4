@@ -2,6 +2,7 @@ import React from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
+// import {Grid, Row, Col, Clearfix} from 'react-bootstrap';
 
 
 import SearchBar from '../utility/SearchBar';
@@ -68,18 +69,22 @@ class GigsIndex extends React.Component {
       <div>
         <div className="marginDiv"></div>
         <SearchBar handleSort={this.handleSort} handleSearch={ this.handleSearch } />
-        <div className="block">
+        <div className="row justify-content-center align-items-center">
           {filteredGigs.map(gig => {
             return(
-              <div key={gig.id}>
+              <div className="block">
+              <div className="col-md-4 col-lg-12">
                 <Link to={`/gigs/${gig.id}`}>
                   <h3>{gig.eventname}</h3>
                 </Link>
+              </div>
+              <div key={gig.id} className="col-md-4 col-lg-3">
                 <Link to={`/gigs/${gig.id}`}>
                   <img src={gig.largeimageurl
                   } />
                 </Link>
               </div>
+            </div>
             );
           })}
         </div>

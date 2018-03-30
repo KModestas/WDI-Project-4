@@ -83,6 +83,8 @@ a {
 
 h3 {
   color: #f6fcde;
+  max-width: 200px;
+  max-height: 200px;
 }
 
 .proceed {
@@ -96,10 +98,7 @@ h3 {
 
 
 .block {
-  width: 500px;
-  height: 500px;
-  margin: 50px;
-  margin-bottom: 15px;
+  padding: 5px;
 
 }
 
@@ -121,4 +120,10 @@ h3 {
   height: 50vh;
   width: 50%;
   opacity: 0.9;
+}
+
+// filtering on index page
+.filtering {
+  padding: 20px;
+  margin-bottom: 30px;
 }
