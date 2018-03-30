@@ -1,11 +1,14 @@
 import React from 'react';
+import {Alert} from 'react-bootstrap';
 
 const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
   return (
     <div>
       <div className="marginDiv"></div>
+
       <form onSubmit={handleSubmit}>
         <div className="form-group">
+          {errors.username && <Alert bsStyle="danger">{errors.username}</Alert>}
           <input
             type="text"
             name="username"
@@ -14,9 +17,10 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
             value={user.username}
             className="form-control"
           />
-          {errors.username && <p style={{color: 'red'}}>{errors.username}</p>}
         </div>
+
         <div className="form-group">
+          {errors.email && <Alert bsStyle="danger">{errors.email}</Alert>}
           <input
             type="text"
             name="email"
@@ -26,8 +30,10 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
             className="form-control"
           />
         </div>
-        {errors.email && <p style={{color: 'red'}}>{errors.email}</p>}
+
+
         <div className="form-group">
+          {errors.password && <Alert bsStyle="danger">{errors.password}</Alert>}
           <input
             type="password"
             name="password"
@@ -36,9 +42,10 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
             value={user.password}
             className="form-control"
           />
-          {errors.password && <p style={{color: 'red'}}>{errors.password}</p>}
+
         </div>
         <div className="form-group">
+          {errors.passwordConfirmation && <Alert bsStyle="danger">{errors.passwordConfirmation}</Alert>}
           <input
             type="password"
             name="passwordConfirmation"
@@ -47,7 +54,6 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
             value={user.passwordConfirmation}
             className="form-control"
           />
-          {errors.passwordConfirmation && <p style={{color: 'red'}}>{errors.passwordConfirmation}</p>}
         </div>
 
         <button className="main-button">Register</button>

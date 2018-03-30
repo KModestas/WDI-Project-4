@@ -4,7 +4,7 @@ import {Alert} from 'react-bootstrap';
 const LoginForm = ({ handleChange, handleSubmit, user, errors }) => {
   return (
     <form onSubmit={handleSubmit}>
-      {errors.message && <Alert bsStyle="danger">{errors.message}</Alert>    }
+      {errors.message && <Alert bsStyle="danger">{errors.message}</Alert> }
       <div className="form-group">
         <input
           type="text"

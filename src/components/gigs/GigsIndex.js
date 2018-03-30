@@ -2,7 +2,7 @@ import React from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
-import { Button } from 'react-bootstrap';
+
 
 import SearchBar from '../utility/SearchBar';
 
@@ -79,7 +79,6 @@ class GigsIndex extends React.Component {
                   <img src={gig.largeimageurl
                   } />
                 </Link>
-                <Button color="danger">Danger!</Button>
               </div>
             );
           })}
