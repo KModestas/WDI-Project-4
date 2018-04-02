@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
 import Auth from '../../lib/Auth';
+import _ from 'lodash';
 
 
 class Profile extends Component {
   state = {
-    user: { gigs: [] }
+    user: { gigs: [] },
+    sortBy: 'date',
+    sortDirection: 'asc'
   }
 
   componentDidMount() {
@@ -21,21 +24,30 @@ class Profile extends Component {
   }
 
   render() {
+
+    const { sortBy, sortDirection } = this.state;
+    const orderedGigs = _.orderBy(this.state.user.gigs, [sortBy], [sortDirection]);
+
     return(
-      <div className="block">
-        <h2 className="green">Hello {this.state.user.username}, these are all of the Gigs you are tracking!</h2>
-        { this.state.user.gigs.map(gig => (
-          <div key={gig.id}>
-            <Link to={'/gigs/' + gig.skiddleId}><h2>{ gig.name }</h2></Link>
-            <Link to={`/gigs/${gig.skiddleId}`}>
-              <img src={gig.image} />
-            </Link>
-            <h3>{ gig.date }</h3>
-            {/* <h4>Entry Price: { gig.entryprice }</h4>
-            <h4>Minimum Age: { gig.minage }</h4> */}
-          </div>
-        ))
-        }
+      <div className="container-fluid">
+        <div className="marginDiv"></div>
+        <h2 className="green">Hello {this.state.user.username}, these are all of the Gigs you are tracking (In Order of Date)</h2>
+        <div className="block row align-items-center justify-content-center">
+
+
+          { orderedGigs.map(gig => (
+            <div key={gig.id}>
+              <div className="col-lg-12">
+                <Link to={'/gigs/' + gig.skiddleId}><h3>{ gig.name }</h3></Link>
+                <Link to={`/gigs/${gig.skiddleId}`}>
+                  <img src={gig.image} />
+                </Link>
+                <h3 className="white">{ gig.date }</h3>
+              </div>
+            </div>
+          ))
+          }
+        </div>
       </div>
     );
   }

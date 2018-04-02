@@ -15,17 +15,18 @@ const Navbar = ({ history }) => {
 
   // return different navbar items based on wether or not the user is authenticted (logged in)
   return(
-    <nav>
-      { <h1 className="darkBackground"><Link to="/">EUPHORIA</Link></h1> }
-      { <h2 className="darkBackground"> Live Music In London </h2>}
-      { <Link className="navLinks darkBackground" to="/about">About</Link>}
-      { !Auth.isAuthenticated() && <Link className="navLinks darkBackground" to="/login">Login</Link>}
-      {' '}
-      { !Auth.isAuthenticated() && <Link className="navLinks darkBackground" to="/register">Register</Link> }
-      {' '}
-      { Auth.isAuthenticated() && <Link className="navLinks darkBackground" to="/profile"> Profile </Link> }
-      {' '}
-      { Auth.isAuthenticated() && <a className="navLinks darkBackground" href="#" onClick={logout}>Logout</a> }
+    <nav className="getInfront">
+      { <h1 className="darkBackground headings"><Link to="/">EUPHORIA</Link></h1> }
+      { <h2 className="darkBackground headings"> Live Music In London </h2>}
+      <div className="navLinkContainer">{ <Link className="navLinks darkBackground" to="/gigs">Gigs</Link>}
+        { !Auth.isAuthenticated() && <Link className="navLinks darkBackground" to="/login">Login</Link>}
+        {' '}
+        { !Auth.isAuthenticated() && <Link className="navLinks darkBackground" to="/register">Register</Link> }
+        {' '}
+        { Auth.isAuthenticated() && <Link className="navLinks darkBackground" to="/profile"> Profile </Link> }
+        {' '}
+        { Auth.isAuthenticated() && <a className="navLinks darkBackground" href="#" onClick={logout}>Logout</a> }
+      </div>
     </nav>
   );
 };

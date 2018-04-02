@@ -2,10 +2,11 @@ import React from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
+// import {Grid, Row, Col, Clearfix} from 'react-bootstrap';
+
 
 import SearchBar from '../utility/SearchBar';
 
-// import Auth from '../../lib/Auth';
 
 
 class GigsIndex extends React.Component {
@@ -65,19 +66,24 @@ class GigsIndex extends React.Component {
     const filteredGigs =_.filter(orderedGigs, (gig) => regex.test(gig.eventname));
 
     return (
-      <div>
+      <div className="container-fluid">
+        <div className="marginDiv"></div>
         <SearchBar handleSort={this.handleSort} handleSearch={ this.handleSearch } />
-        <div className="block">
+        <div className="row justify-content-center align-items-center">
           {filteredGigs.map(gig => {
             return(
-              <div key={gig.id}>
-                <Link to={`/gigs/${gig.id}`}>
-                  <h3>{gig.eventname}</h3>
-                </Link>
-                <Link to={`/gigs/${gig.id}`}>
-                  <img src={gig.largeimageurl
-                  } />
-                </Link>
+              <div key={gig.id} className="block">
+                <div className="col-lg-12">
+                  <Link to={`/gigs/${gig.id}`}>
+                    <h3 className="gigShadow">{gig.eventname}</h3>
+                  </Link>
+                </div>
+                <div className="col-lg-3">
+                  <Link to={`/gigs/${gig.id}`}>
+                    <img src={gig.largeimageurl
+                    } />
+                  </Link>
+                </div>
               </div>
             );
           })}
