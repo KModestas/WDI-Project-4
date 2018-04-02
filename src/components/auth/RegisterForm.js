@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
   return (
     <div className="container ">
