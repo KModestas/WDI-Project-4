@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
-// import { Link } from 'react-router-dom';
+
+
 import Auth from '../../lib/Auth';
 import GoogleMap from '../utility/GoogleMap';
+
 
 
 class GigsShow extends Component {
@@ -65,6 +67,7 @@ class GigsShow extends Component {
       })
       .then(res => {
         console.log(res);
+        this.props.history.push('/profile');
       })
       .catch(err => console.log(err));
   }
@@ -81,6 +84,7 @@ class GigsShow extends Component {
       })
       .then(res => {
         console.log(res);
+        this.props.history.push('/profile');
       })
       .catch(err => console.log(err));
   }
@@ -89,24 +93,28 @@ class GigsShow extends Component {
     // const latitude = Number(this.state.gig.venue.latitude);
     // const longitude = Number(this.state.gig.venue.longitude);
     return(
-      <div>
-        <div className="block">
-          <h3>{this.state.gig.eventname}</h3>
-          <img src={this.state.gig.largeimageurl
-          } />
-          <h3 className="offYellow">{ this.state.gig.date }</h3>
-          <h4 className="offYellow">Venue: { this.state.gig.venue.name }</h4>
-          <h4 className="offYellow">Entry Price: { this.state.gig.entryprice }</h4>
-          <p className="offYellow">{ this.state.gig.description }</p>
-          {/*  if user has not favourites, display the track button */}
-          {!this.userIsTracking() && <button onClick={this.trackGig}>
+      <div className="container">
+        <div className="marginDiv"></div>
+        <div className="block row justify-content-center align-items-center">
+          <div className="col-sm-12 col-md-6 col-lg-4">
+            <h3 className="white">{this.state.gig.eventname}</h3>
+            <img src={this.state.gig.largeimageurl
+            } />
+            <h3 className="white">{ this.state.gig.date }</h3>
+            <h4 className="white">Venue: { this.state.gig.venue.name }</h4>
+            <h4 className="white">Entry Price: { this.state.gig.entryprice }</h4>
+            <p className="white">{ this.state.gig.description }</p>
+            {/*  if user has not favourites, display the track button */}
+            {!this.userIsTracking() && <button onClick={this.trackGig}>
              Track
-          </button>}
-          {this.userIsTracking() && <button onClick={this.unTrackGig}>
+            </button>}
+            {this.userIsTracking() && <button onClick={this.unTrackGig}>
              Untrack
-          </button>}
+            </button>}
+          </div>
+
+          <div className="col-sm-12 col-md-6 col-lg-6">  <GoogleMap center={this.state.center}/> </div>
         </div>
-        <GoogleMap center={this.state.center}/>
       </div>
     );
   }

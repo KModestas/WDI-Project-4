@@ -9,6 +9,8 @@ import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Navbar from './components/utility/Navbar';
 import Profile from './components/user/Profile';
+import HomePage from './components/other/HomePage';
+
 
 
 import './scss/style.scss';
@@ -19,16 +21,16 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div>
-          <header>
-            <Navbar />
-          </header>
+          <Navbar />
           <main>
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Switch>
-              <Route exact path="/" component={GigsIndex} />
-              <Route path="/profile" component={Profile} />
+              <Route exact path="/" component={HomePage} />
               <Route path="/gigs/:id" component={GigsShow} />
+              <Route path="/gigs" component={GigsIndex} />
+              <Route path="/profile" component={Profile} />
+
             </Switch>
           </main>
         </div>

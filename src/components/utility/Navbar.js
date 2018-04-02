@@ -6,7 +6,7 @@ import Auth from '../../lib/Auth';
 
 const Navbar = ({ history }) => {
 
-  // preventDefault tops refresh. Also ends the session by logging user out and then redirecting them to the homepage. This function is called when you click on the logout button down below.
+  // preventDefault stops refresh. Also ends the session by logging user out and then redirecting them to the homepage. This function is called when you click on the logout button down below.
   function logout(e) {
     e.preventDefault();
     Auth.logout();
@@ -15,16 +15,18 @@ const Navbar = ({ history }) => {
 
   // return different navbar items based on wether or not the user is authenticted (logged in)
   return(
-    <nav>
-      { <h1 className="darkBackground"><Link to="/">EUPHORIA</Link></h1> }
-      { <h2 className="darkBackground"> Live Music In London </h2>}
-      { !Auth.isAuthenticated() && <Link className="navLinks darkBackground" to="/login">Login</Link>}
-      {' '}
-      { !Auth.isAuthenticated() && <Link className="navLinks darkBackground" to="/register">Register</Link> }
-      {' '}
-      { Auth.isAuthenticated() && <Link className="navLinks darkBackground" to="/profile"> Profile </Link> }
-      {' '}
-      { Auth.isAuthenticated() && <a className="navLinks darkBackground" href="#" onClick={logout}>Logout</a> }
+    <nav className="getInfront">
+      { <h1 className="darkBackground headings"><Link to="/">EUPHORIA</Link></h1> }
+      { <h2 className="darkBackground headings"> Live Music In London </h2>}
+      <div className="navLinkContainer">{ <Link className="navLinks darkBackground" to="/gigs">Gigs</Link>}
+        { !Auth.isAuthenticated() && <Link className="navLinks darkBackground" to="/login">Login</Link>}
+        {' '}
+        { !Auth.isAuthenticated() && <Link className="navLinks darkBackground" to="/register">Register</Link> }
+        {' '}
+        { Auth.isAuthenticated() && <Link className="navLinks darkBackground" to="/profile"> Profile </Link> }
+        {' '}
+        { Auth.isAuthenticated() && <a className="navLinks darkBackground" href="#" onClick={logout}>Logout</a> }
+      </div>
     </nav>
   );
 };

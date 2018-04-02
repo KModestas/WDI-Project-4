@@ -10,12 +10,18 @@ class Login extends React.Component {
     user: {
       email: '',
       password: ''
+    },
+    errors: {
+      message: ''
     }
   };
 
   handleChange = ({ target: { name, value } }) => {
     const user = Object.assign({}, this.state.user, { [name]: value });
     this.setState({ user });
+
+    const errors = Object.assign({}, this.state.errors.message, { [name]: '' });
+    this.setState({ user, errors });
   }
 
   handleSubmit = (e) => {
@@ -24,18 +30,24 @@ class Login extends React.Component {
       .post('/api/login', this.state.user)
       .then(res => {
         Auth.setToken(res.data.token);
-        this.props.history.push('/');
+        this.props.history.push('/gigs');
       })
-      .catch(err => console.log(err));
+      .catch(err => this.setState({errors: { message: err.response.data.message }}));
   }
 
   render() {
+    console.log(this.state.errors);
     return (
-      <LoginForm
-        user={this.state.user}
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}
-      />
+      <div>
+        <div className="marginDiv"></div>
+        <LoginForm
+          user={this.state.user}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+          errors={this.state.errors}
+        />
+      </div>
+
     );
   }
 }

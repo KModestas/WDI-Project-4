@@ -18,7 +18,7 @@ function gigsIndex(req, res) {
       longitude: -0.073162,
       radius: 5,
       eventcode: 'LIVE',
-      limit: 20
+      limit: 50
     }
   })
     .then((response) => {
@@ -30,28 +30,28 @@ function gigsIndex(req, res) {
 }
 
 
-function gigsUpdate(req, res) {
-
-  rp({
-    url: 'http://www.skiddle.com/api/v1/events/search',
-    method: 'GET',
-    json: true, // asking for json format back from their api
-    qs: {
-      api_key: process.env.SKIDDLE_API_KEY,
-      latitude: 51.515030,
-      longitude: -0.073162,
-      radius: 5,
-      eventcode: 'LIVE',
-      limit: req.body.limit
-    }
-  })
-    .then((response) => {
-      res.json(response); // res is sending the data to client side
-    })
-    .catch((err) => {
-      res.json(err);
-    });
-}
+// function gigsUpdate(req, res) {
+//
+//   rp({
+//     url: 'http://www.skiddle.com/api/v1/events/search',
+//     method: 'GET',
+//     json: true, // asking for json format back from their api
+//     qs: {
+//       api_key: process.env.SKIDDLE_API_KEY,
+//       latitude: 51.515030,
+//       longitude: -0.073162,
+//       radius: 5,
+//       eventcode: 'LIVE',
+//       limit: req.body.limit
+//     }
+//   })
+//     .then((response) => {
+//       res.json(response); // res is sending the data to client side
+//     })
+//     .catch((err) => {
+//       res.json(err);
+//     });
+// }
 
 
 
@@ -78,6 +78,6 @@ function gigsShow(req, res) {
 
 module.exports = {
   index: gigsIndex,
-  show: gigsShow,
-  update: gigsUpdate
+  show: gigsShow
+  // update: gigsUpdate
 };
