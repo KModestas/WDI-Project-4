@@ -29,19 +29,21 @@ class Profile extends Component {
     const orderedGigs = _.orderBy(this.state.user.gigs, [sortBy], [sortDirection]);
 
     return(
-      <div>
+      <div className="container-fluid">
         <div className="marginDiv"></div>
-        <div className="block">
-          <h2 className="green">Hello {this.state.user.username}, these are all of the Gigs you are tracking (In Order of Date)</h2>
+        <h2 className="green">Hello {this.state.user.username}, these are all of the Gigs you are tracking (In Order of Date)</h2>
+        <div className="block row align-items-center justify-content-center">
+
+
           { orderedGigs.map(gig => (
             <div key={gig.id}>
-              <Link to={'/gigs/' + gig.skiddleId}><h2>{ gig.name }</h2></Link>
-              <Link to={`/gigs/${gig.skiddleId}`}>
-                <img src={gig.image} />
-              </Link>
-              <h3>{ gig.date }</h3>
-              {/* <h4>Entry Price: { gig.entryprice }</h4>
-            <h4>Minimum Age: { gig.minage }</h4> */}
+              <div className="col-lg-12">
+                <Link to={'/gigs/' + gig.skiddleId}><h3>{ gig.name }</h3></Link>
+                <Link to={`/gigs/${gig.skiddleId}`}>
+                  <img src={gig.image} />
+                </Link>
+                <h3 className="white">{ gig.date }</h3>
+              </div>
             </div>
           ))
           }

@@ -30,7 +30,7 @@ class Login extends React.Component {
       .post('/api/login', this.state.user)
       .then(res => {
         Auth.setToken(res.data.token);
-        this.props.history.push('/');
+        this.props.history.push('/gigs');
       })
       .catch(err => this.setState({errors: { message: err.response.data.message }}));
   }

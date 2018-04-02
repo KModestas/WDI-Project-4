@@ -2,10 +2,12 @@ import React from 'react';
 
 const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
   return (
-    <div>
+    <div className="container ">
       <div className="marginDiv"></div>
-      <form onSubmit={handleSubmit}>
+
+      <form className="authForm" onSubmit={handleSubmit}>
         <div className="form-group">
+          {errors.username && <p className="errorMsg">{errors.username}</p>}
           <input
             type="text"
             name="username"
@@ -14,9 +16,10 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
             value={user.username}
             className="form-control"
           />
-          {errors.username && <p style={{color: 'red'}}>{errors.username}</p>}
         </div>
+
         <div className="form-group">
+          {errors.email && <p className="errorMsg">{errors.email}</p>}
           <input
             type="text"
             name="email"
@@ -26,8 +29,10 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
             className="form-control"
           />
         </div>
-        {errors.email && <p style={{color: 'red'}}>{errors.email}</p>}
+
+
         <div className="form-group">
+          {errors.password && <p className="errorMsg">{errors.password}</p>}
           <input
             type="password"
             name="password"
@@ -36,9 +41,10 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
             value={user.password}
             className="form-control"
           />
-          {errors.password && <p style={{color: 'red'}}>{errors.password}</p>}
+
         </div>
         <div className="form-group">
+          {errors.passwordConfirmation && <p className="errorMsg">{errors.passwordConfirmation}</p>}
           <input
             type="password"
             name="passwordConfirmation"
@@ -47,7 +53,6 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
             value={user.passwordConfirmation}
             className="form-control"
           />
-          {errors.passwordConfirmation && <p style={{color: 'red'}}>{errors.passwordConfirmation}</p>}
         </div>
 
         <button className="main-button">Register</button>

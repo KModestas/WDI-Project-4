@@ -1,9 +1,10 @@
 import React from 'react';
 
+
 const LoginForm = ({ handleChange, handleSubmit, user, errors }) => {
   return (
-    <form onSubmit={handleSubmit}>
-      {errors.message && <p style={{color: 'red'}}>{errors.message}</p>}
+    <form className="container authForm" onSubmit={handleSubmit}>
+      {errors.message && <p className="errorMsg">{errors.message}</p> }
       <div className="form-group">
         <input
           type="text"
