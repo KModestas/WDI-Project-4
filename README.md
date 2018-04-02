@@ -9,11 +9,15 @@
 Once a user registers and logs in to their account. They will be greeted by this Gigs Index page
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f82ca17a84d84b68acebec01ee579d5fe5d187ac
 <img src="src/assets/project4.png" />
 
 From here, the user can sift through gigs in London and can filter those gigs by their name as well as sort them by parameters such as date and alphabetical order.
 
 Once a user has found the gig they want to track, they can click on the gig which will bring them to its 'show' page. Here, details such as price and description are displayed as well as a google map of it's precise location.
+<<<<<<< HEAD
 =======
 </img>
 
@@ -21,6 +25,8 @@ From here, the can sift through gigs in London and can filer those gigs by their
 
 Once a user has found the gig they want to track, they can click on the gig which will bring them to its 'show' page, whereby further details such as price and description are displayed as well as a google map of it's precise location.
 >>>>>>> b2992efd5864305319f2355a3bb968f1758b4e1c
+=======
+>>>>>>> f82ca17a84d84b68acebec01ee579d5fe5d187ac
 
 A user can thereon click the track button, which will redirect them to their profile page, displaying all of their 'tracked' gigs in the order of the most imminent ones first. To untrack the gig, a user can simply click on the 'untrack' button on the gigs show page.
 
@@ -45,11 +51,15 @@ A user can thereon click the track button, which will redirect them to their pro
 
 <h2>Wins</h2>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f82ca17a84d84b68acebec01ee579d5fe5d187ac
 Overall, I enjoyed working with React as it seems to be much more simple and efficient than AngularJS from my experience. After the course finished, I also really enjoyed being able to sit down in my own time and continue working on the application. I was able to go over my app and understand react more throughly. I also particularly enjoyed working on the styling and felt like I was able to captivate the theme of a concert in my app.
 
 
 <h2>Challenges</h2>
 Other than building something relatively complicated with a week’s worth of React experience, the main challenge for me was the mental hurdle of pushing through the last project after an intense three months of non stop action. Additionally, although I intended to use React Bootstrap, I ended up using the original Bootstrap by adding classes to my components because I felt it was slightly more intuitive.
+<<<<<<< HEAD
 =======
 Overall, I enjoyed working with React as it seems to be much more simple and efficient than AngularJS from my experience. After the course finished, I also really enjoyed being able to sit down in my own time and continue working on the application. I was able to go over my application and understand react more throughly. I also particularly enjoyed working on the styling and felt like I was able to captivate the theme of a concert in my app.
 
@@ -57,6 +67,8 @@ Overall, I enjoyed working with React as it seems to be much more simple and eff
 <h2>Challenges</h2>
 Other than building something relatively complicated with a week’s worth of React experience, the main challenge for me was the mental hurdle of pushing through the last project after an intense three months of non stop action. Additionally, I although I intended to use React Bootstrap, I ended up using the original Bootstrap by adding classes to my components because I felt it was slightly more intuitive.
 >>>>>>> b2992efd5864305319f2355a3bb968f1758b4e1c
+=======
+>>>>>>> f82ca17a84d84b68acebec01ee579d5fe5d187ac
 
 <h2>Future improvements</h2>
 
