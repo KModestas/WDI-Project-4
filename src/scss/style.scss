@@ -55,6 +55,17 @@ button {
     }
 }
 
+button {
+  padding: 5px;
+  border: 2px solid white;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.6);
+  color: #f6fcde;;
+  &:hover {
+        cursor: pointer;
+        color: #e8a93c !important;
+    }
+}
 
 .proceed {
   background: rgba(0,0,0,0.6);
@@ -76,6 +87,12 @@ button {
         color: #e8a93c !important;
     }
 }
+
+// NAVBAR
+.getInfront {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
 
 
 .proceed {

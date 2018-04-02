@@ -1,8 +1,5 @@
 import React from 'react';
-<<<<<<< HEAD
 
-=======
->>>>>>> b2992efd5864305319f2355a3bb968f1758b4e1c
 
 const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
   return (
