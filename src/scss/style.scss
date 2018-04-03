@@ -31,15 +31,18 @@ button {
         cursor: pointer;
         color: #e8a93c !important;
     }
-  .proceed {
-    background: rgba(0,0,0,0.6);
-    padding: 10px;
-    border: 2px solid white;
-    border-radius: 10px;
-    position: relative;
-    top: 40px;
-  }
+
 }
+
+.proceed {
+  background: rgba(0,0,0,0.6);
+  padding: 10px;
+  border: 2px solid white;
+  border-radius: 10px;
+  position: relative;
+  top: 40px;
+}
+
 
 
 // prevent content going behind the navbar
@@ -205,8 +208,3 @@ a {
   margin-top: 50px;
   padding: 20px;
 }
-
-
-.white {
-   color: white !important;
- }

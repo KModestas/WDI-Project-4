@@ -38,7 +38,7 @@ class Profile extends Component {
           { orderedGigs.map(gig => (
             <div key={gig.id}>
               <div className="col-lg-12">
-                <Link to={'/gigs/' + gig.skiddleId}><h3>{ gig.name }</h3></Link>
+                <Link to={'/gigs/' + gig.skiddleId}><h3 className="gigShadow ">{ gig.name }</h3></Link>
                 <Link to={`/gigs/${gig.skiddleId}`}>
                   <img src={gig.image} />
                 </Link>
