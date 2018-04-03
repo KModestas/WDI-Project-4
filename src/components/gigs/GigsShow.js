@@ -89,8 +89,7 @@ class GigsShow extends Component {
   }
 
   render() {
-    // const latitude = Number(this.state.gig.venue.latitude);
-    // const longitude = Number(this.state.gig.venue.longitude);
+  
     return(
       <div className="container">
         <div className="marginDiv"></div>
