@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
-// import { Link } from 'react-router-dom';
+
+
 import Auth from '../../lib/Auth';
 import GoogleMap from '../utility/GoogleMap';
+
 
 
 class GigsShow extends Component {
@@ -12,16 +14,9 @@ class GigsShow extends Component {
     },
     user: {
       gigs: []
-    },
-    center: { lat: 51.5074, lng: 0.1277 }
+    }
   }
 
-  // deleteGig = () => {
-  //   Axios
-  //     .delete(`/api/gigs/${this.props.match.params.id}`)
-  //     .then(() => this.props.history.push('/'))
-  //     .catch(err => console.log(err));
-  // }
 
   // gets single gig from skiddle api
   componentDidMount() {
@@ -48,7 +43,7 @@ class GigsShow extends Component {
   }
 
   // if user has gigs, it will some over them
-  userHasFavourited = () => {
+  userIsTracking = () => {
     return this.state.user.gigs.length && this.state.user.gigs.some(gig => {
       // and return true if one of the users gigs matches the skiddle id in the url which will allow us to hide the track button below
       return gig.skiddleId === this.props.match.params.id;
@@ -66,11 +61,12 @@ class GigsShow extends Component {
       date: this.state.gig.date
     };
     Axios
-      .post('/api/gigs/favourite', gig, {
+      .post('/api/gigs/track', gig, {
         headers: { Authorization: `Bearer ${Auth.getToken()}`}
       })
       .then(res => {
         console.log(res);
+        this.props.history.push('/profile');
       })
       .catch(err => console.log(err));
   }
@@ -82,37 +78,45 @@ class GigsShow extends Component {
       id: this.state.gig.id
     };
     Axios
-      .put('/api/gigs/favourite', gig, {
+      .put('/api/gigs/track', gig, {
         headers: { Authorization: `Bearer ${Auth.getToken()}`}
       })
       .then(res => {
         console.log(res);
+        this.props.history.push('/profile');
       })
       .catch(err => console.log(err));
   }
 
   render() {
+    // const latitude = Number(this.state.gig.venue.latitude);
+    // const longitude = Number(this.state.gig.venue.longitude);
     return(
-      <div>
-        <div className="block">
-          <h3>{this.state.gig.eventname}</h3>
-          <img src={this.state.gig.largeimageurl
-          } />
-          <h3 className="offYellow">{ this.state.gig.date }</h3>
-          <h4 className="offYellow">Venue: { this.state.gig.venue.name }</h4>
-          <h4 className="offYellow">Entry Price: { this.state.gig.entryprice }</h4>
-          <p className="offYellow">{ this.state.gig.description }</p>
-          {/*  if user has not favourites, display the track button */}
-          {!this.userHasFavourited() && <button onClick={this.trackGig}>
+      <div className="container">
+        <div className="marginDiv"></div>
+        <div className="block row justify-content-center align-items-center">
+          <div className="col-sm-12 col-md-6 col-lg-4">
+            <h3 className="white">{this.state.gig.eventname}</h3>
+            <img src={this.state.gig.largeimageurl
+            } />
+            <h3 className="white">{ this.state.gig.date }</h3>
+            <h4 className="white">Venue: { this.state.gig.venue.name }</h4>
+            <h4 className="white">Entry Price: { this.state.gig.entryprice }</h4>
+            <p className="white">{ this.state.gig.description }</p>
+            {/*  if user has not favourites, display the track button */}
+            {!this.userIsTracking() && <button onClick={this.trackGig}>
              Track
-          </button>}
-          {this.userHasFavourited() && <button onClick={this.unTrackGig}>
+            </button>}
+            {this.userIsTracking() && <button onClick={this.unTrackGig}>
              Untrack
-          </button>}
+            </button>}
+          </div>
+
+          <div className="col-sm-12 col-md-6 col-lg-6">
+            <GoogleMap lat={this.state.gig.venue.latitude} lng={this.state.gig.venue.longitude}
+            />
+          </div>
         </div>
-        <GoogleMap center={this.state.center} />
-        {console.log(this.state.gig.venue.latitude)}
-        {console.log(this.state.gig.venue.longitude)}
       </div>
     );
   }

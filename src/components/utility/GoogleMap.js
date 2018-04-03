@@ -6,9 +6,13 @@ import mapStyles from '../config/mapStyles';
 
 class GoogleMap extends React.Component {
 
+  state = {
+    center: { lat: 51.5074, lng: 0.1277 }
+  }
+
   componentDidMount() {
     this.map = new google.maps.Map(this.mapCanvas, {
-      center: this.props.center  || { lat: 51.5074, lng: 0.1277},
+      center: {lat: this.props.lat, lng: this.props.lng} || this.state.center,
       zoom: 14,
       clickableIcons: false,
       disableDefaultUI: true,
@@ -17,9 +21,11 @@ class GoogleMap extends React.Component {
 
     this.marker = new google.maps.Marker({
       map: this.map,
-      position: this.props.center || { lat: 51.5074, lng: 0.1277},
+      position: this.props.center || {lat: this.props.lat, lng: this.props.lng},
       animation: google.maps.Animation.DROP
     });
+
+
   }
 
   componentWillUnmount() {
@@ -30,10 +36,17 @@ class GoogleMap extends React.Component {
 
   render() {
     return (
-      <div className='google-map' ref={element => this.mapCanvas = element}></div>
+      <div className='google-map' ref={element => this.mapCanvas = element}>
+      </div>
+
     );
   }
 }
+
+// another way of creating default coordinates if there are no props passed into the google map component
+// GoogleMap.defaultProps = {
+//   center: { lat: 51.5074, lng: 0.1277 }
+// };
 
 export default GoogleMap;
 
