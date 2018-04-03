@@ -18,7 +18,7 @@ function gigsIndex(req, res) {
       longitude: -0.073162,
       radius: 5,
       eventcode: 'LIVE',
-      limit: 50
+      limit: 30
     }
   })
     .then((response) => {

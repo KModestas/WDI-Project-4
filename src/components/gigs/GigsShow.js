@@ -89,7 +89,7 @@ class GigsShow extends Component {
   }
 
   render() {
-  
+
     return(
       <div className="container">
         <div className="marginDiv"></div>
