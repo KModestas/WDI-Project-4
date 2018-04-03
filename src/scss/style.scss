@@ -31,74 +31,16 @@ button {
         cursor: pointer;
         color: #e8a93c !important;
     }
+  .proceed {
+    background: rgba(0,0,0,0.6);
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+    position: relative;
+    top: 40px;
+  }
 }
 
-
-.proceed {
-  background: rgba(0,0,0,0.6);
-  padding: 10px;
-  border: 2px solid white;
-  border-radius: 10px;
-  position: relative;
-  top: 40px;
-}
-
-button {
-  padding: 5px;
-  border: 2px solid white;
-  border-radius: 10px;
-  background: rgba(0,0,0,0.6);
-  color: #f6fcde;;
-  &:hover {
-        cursor: pointer;
-        color: #e8a93c !important;
-    }
-}
-
-button {
-  padding: 5px;
-  border: 2px solid white;
-  border-radius: 10px;
-  background: rgba(0,0,0,0.6);
-  color: #f6fcde;;
-  &:hover {
-        cursor: pointer;
-        color: #e8a93c !important;
-    }
-}
-
-.proceed {
-  background: rgba(0,0,0,0.6);
-  padding: 10px;
-  border: 2px solid white;
-  border-radius: 10px;
-  position: relative;
-  top: 40px;
-}
-
-button {
-  padding: 5px;
-  border: 2px solid white;
-  border-radius: 10px;
-  background: rgba(0,0,0,0.6);
-  color: #f6fcde;;
-  &:hover {
-        cursor: pointer;
-        color: #e8a93c !important;
-    }
-}
-
-
-
-
-.proceed {
-  background: rgba(0,0,0,0.6);
-  padding: 10px;
-  border: 2px solid white;
-  border-radius: 10px;
-  position: relative;
-  top: 40px;
-}
 
 // prevent content going behind the navbar
 .marginDiv {
@@ -264,57 +206,7 @@ a {
   padding: 20px;
 }
 
-// filtering on index page
-.order {
-  padding: 20px;
-  margin-bottom: 30px;
-  // margin-left: 80px;
-  text-align: center;
-
-  .sorting {
-    margin-right: 20px;
-    margin-bottom: 15px;
-    background:  rgb(24, 6, 51);
-    color: white;
-    padding: 5px;
-    width: 300px;
-  }
-
-  .filtering {
-    background:  rgb(24, 6, 51);
-    color: #fff;
-    border-radius: 6px;
-    width: 300px;
-
-  }
-}
 
 .white {
    color: white !important;
  }
-
-
-.errorMsg {
-  color: #e8a93c;
-  text-shadow: 2px 2px #000000;
-}
-
-.authForm {
-  margin-top: 50px;
-  padding: 20px;
-}
-
-.white {
-   color: white !important;
- }
-
-
-.errorMsg {
-  color: #e8a93c;
-  text-shadow: 2px 2px #000000;
-}
-
-.authForm {
-  margin-top: 50px;
-  padding: 20px;
-}
