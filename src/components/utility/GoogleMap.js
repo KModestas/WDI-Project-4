@@ -12,7 +12,7 @@ class GoogleMap extends React.Component {
 
   componentDidMount() {
     this.map = new google.maps.Map(this.mapCanvas, {
-      center: {lat: this.props.lat, lng: this.props.lng} || this.state.center,
+      center: { lat: parseFloat(this.props.lat), lng: parseFloat(this.props.lng)} || this.state.center,
       zoom: 14,
       clickableIcons: false,
       disableDefaultUI: true,
@@ -24,8 +24,6 @@ class GoogleMap extends React.Component {
       position: this.props.center || {lat: this.props.lat, lng: this.props.lng},
       animation: google.maps.Animation.DROP
     });
-
-
   }
 
   componentWillUnmount() {
@@ -34,9 +32,14 @@ class GoogleMap extends React.Component {
     this.map = null;
   }
 
+
+
+
   render() {
     return (
       <div className='google-map' ref={element => this.mapCanvas = element}>
+        {console.log(this.props.lat)}
+        {console.log(this.props.lng)}
       </div>
 
     );
