@@ -74,21 +74,6 @@ button {
   border-radius: 10px;
   position: relative;
   top: 40px;
-<<<<<<< HEAD
-}
-
-button {
-  padding: 5px;
-  border: 2px solid white;
-  border-radius: 10px;
-  background: rgba(0,0,0,0.6);
-  color: #f6fcde;;
-  &:hover {
-        cursor: pointer;
-        color: #e8a93c !important;
-    }
-=======
->>>>>>> 91d3352a9536e3756179f32264f465f4e5ebb706
 }
 
 button {
@@ -104,33 +89,6 @@ button {
 }
 
 
-
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 91d3352a9536e3756179f32264f465f4e5ebb706
-.proceed {
-  background: rgba(0,0,0,0.6);
-  padding: 10px;
-  border: 2px solid white;
-  border-radius: 10px;
-  position: relative;
-  top: 40px;
-}
-
-<<<<<<< HEAD
-button {
-  padding: 5px;
-  border: 2px solid white;
-  border-radius: 10px;
-  background: rgba(0,0,0,0.6);
-  color: #f6fcde;;
-  &:hover {
-        cursor: pointer;
-        color: #e8a93c !important;
-    }
-}
 
 
 .proceed {
@@ -148,14 +106,6 @@ button {
   width: 100%;
 }
 
-=======
-// prevent content going behind the navbar
-.marginDiv {
-  height: 180px;
-  width: 100%;
-}
-
->>>>>>> 91d3352a9536e3756179f32264f465f4e5ebb706
 // NAVBAR
 .getInfront {
   z-index: 2;
@@ -203,11 +153,7 @@ button {
 }
 
 .overlay {
-<<<<<<< HEAD
-  height: 100vh;
-=======
   height: 100%;
->>>>>>> 91d3352a9536e3756179f32264f465f4e5ebb706
   width: 100%;
   background: rgba(0,0,0,0.55);
   z-index: 1;
@@ -244,19 +190,8 @@ button {
   p, h4 {
     max-width: 280px;
   }
-<<<<<<< HEAD
-=======
-}
->>>>>>> 91d3352a9536e3756179f32264f465f4e5ebb706
 }
 }
-
-
-
-// .darkBackground {
-//   background: rgba(0,0,0,0.7);
-// }
-
 
 
 
