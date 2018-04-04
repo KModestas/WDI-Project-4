@@ -8,8 +8,7 @@
 
 Once a user registers and logs in to their account. They will be greeted by this Gigs Index page
 
-
-
+<img src="/Users/modestas/development/KModestas.github.io/images/project4.png"/>
 
 From here, the user can sift through gigs in London and can filter those gigs by their name as well as sort them by parameters such as date and alphabetical order.
 
