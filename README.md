@@ -50,7 +50,6 @@ Overall, I enjoyed working with React as it seems to be much more simple and eff
 
 <h2>Challenges</h2>
 Other than building something relatively complicated with a week’s worth of React experience, the main challenge for me was the mental hurdle of pushing through the last project after an intense three months of non stop action. Additionally, although I intended to use React Bootstrap, I ended up using the original Bootstrap by adding classes to my components because I felt it was slightly more intuitive.
-Overall, I enjoyed working with React as it seems to be much more simple and efficient than AngularJS from my experience. After the course finished, I also really enjoyed being able to sit down in my own time and continue working on the application. I was able to go over my application and understand react more throughly. I also particularly enjoyed working on the styling and felt like I was able to captivate the theme of a concert in my app.
 
 
 <h2>Challenges</h2>
