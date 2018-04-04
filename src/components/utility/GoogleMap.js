@@ -21,7 +21,7 @@ class GoogleMap extends React.Component {
 
     this.marker = new google.maps.Marker({
       map: this.map,
-      position: this.props.center || {lat: this.props.lat, lng: this.props.lng},
+      position: { lat: parseFloat(this.props.lat), lng: parseFloat(this.props.lng)} || {lat: this.state.lat, lng: this.state.lng},
       animation: google.maps.Animation.DROP
     });
   }

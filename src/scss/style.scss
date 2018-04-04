@@ -98,10 +98,11 @@ button {
 }
 
 .overlay {
-  height: 100%;
+  height: 100vh;
   width: 100%;
   background: rgba(0,0,0,0.55);
   z-index: 1;
+  overflow-y: scroll;
 }
 
 // for z index to work element needs to be positioned. also z index is applied to all children so it cannot be applied to a container div
