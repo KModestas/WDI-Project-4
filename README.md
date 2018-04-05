@@ -52,11 +52,6 @@ Overall, I enjoyed working with React as it seems to be much more simple and eff
 Other than building something relatively complicated with a week’s worth of React experience, the main challenge for me was the mental hurdle of pushing through the last project after an intense three months of non stop action. Additionally, although I intended to use React Bootstrap, I ended up using the original Bootstrap by adding classes to my components because I felt it was slightly more intuitive.
 
 
-<h2>Challenges</h2>
-Other than building something relatively complicated with a week’s worth of React experience, the main challenge for me was the mental hurdle of pushing through the last project after an intense three months of non stop action. Additionally, I although I intended to use React Bootstrap, I ended up using the original Bootstrap by adding classes to my components because I felt it was slightly more intuitive.
-
-
-
 <h2>Future improvements</h2>
 
 Although I have already implemented some post course features such as filtering and sorting and the google maps API, I think that if I wanted to expand my app further, I could make it global. What I mean by this, is allowing users to filter gigs from any location in the world by typing a place in an input bar and retrieving the gigs from the local area specified.
