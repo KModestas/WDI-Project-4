@@ -10,22 +10,6 @@ class GoogleMap extends React.Component {
     center: { lat: 51.5074, lng: 0.1277 }
   }
 
-  // componentDidMount() {
-  //   console.log(this.props);
-  //   // this.map = new google.maps.Map(this.mapCanvas, {
-  //   //   center: { lat: parseFloat(this.props.lat), lng: parseFloat(this.props.lng)} || this.state.center,
-  //   //   zoom: 14,
-  //   //   clickableIcons: false,
-  //   //   disableDefaultUI: true,
-  //   //   styles: mapStyles
-  //   // });
-  //   //
-  //   // this.marker = new google.maps.Marker({
-  //   //   map: this.map,
-  //   //   position: { lat: parseFloat(this.props.lat), lng: parseFloat(this.props.lng)} || {lat: this.state.lat, lng: this.state.lng},
-  //   //   animation: google.maps.Animation.DROP
-  //   // });
-  // }
 
   componentDidUpdate() {
     this.map = new google.maps.Map(this.mapCanvas, {
