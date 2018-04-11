@@ -79,5 +79,4 @@ function gigsShow(req, res) {
 module.exports = {
   index: gigsIndex,
   show: gigsShow
-  // update: gigsUpdate
 };
