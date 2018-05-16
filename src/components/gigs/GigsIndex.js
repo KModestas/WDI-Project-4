@@ -58,6 +58,8 @@ class GigsIndex extends React.Component {
 
   render() {
 
+    {console.log(this.state.gigs);}
+
     const { sortBy, sortDirection, query } = this.state;
     const regex = new RegExp(query, 'i');
 
