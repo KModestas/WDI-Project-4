@@ -52,7 +52,7 @@ class GigsIndex extends React.Component {
   }
 
   // *** FILTERING ***
-  // creating a new regex expression and passing in query (value of input field your type your search in)
+  // creating a new regex expression and passing in query (value of input field you type your search in)
   // 'i' makes it case insensitive
   // using lodash _filter method to filter over gigs array and using the regex i made to filter for gig.eventname
 
@@ -90,7 +90,6 @@ class GigsIndex extends React.Component {
             );
           })}
         </div>
-        {/* <button onClick={this.loadMore}>Load More</button> */}
       </div>
     );
   }

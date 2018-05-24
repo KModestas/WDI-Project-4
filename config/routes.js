@@ -16,7 +16,7 @@ router.route('/gigs/track')
 
 router.route('/gigs')
   .get(gigs.index);
-// .put(gigs.update);
+
 
 router.route('/gigs/:id')
   .get(gigs.show);
