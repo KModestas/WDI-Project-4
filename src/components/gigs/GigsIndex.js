@@ -2,7 +2,6 @@ import React from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
-// import {Grid, Row, Col, Clearfix} from 'react-bootstrap';
 
 
 import SearchBar from '../utility/SearchBar';
@@ -27,19 +26,7 @@ class GigsIndex extends React.Component {
   }
 
 
-  //
-  // loadMore() {
-  //   const limit = {
-  //     limit: 50
-  //   };
-  //
-  //   Axios
-  //     .put('/api/gigs', limit)
-  //     .then(res => this.setState({ gigs: res.data.results }, ()=> {
-  //       console.log(res);
-  //     }))
-  //     .catch(err => console.log(err));
-  // }
+  // const [sortBy, sortDirection]  is creating new array with two values split by pipe as elements
 
   handleSort = (e) => {
     const [sortBy, sortDirection] = e.target.value.split('|');
@@ -60,6 +47,7 @@ class GigsIndex extends React.Component {
 
     {console.log(this.state.gigs);}
 
+    //grabbing these values from the state and deconstructing them
     const { sortBy, sortDirection, query } = this.state;
     const regex = new RegExp(query, 'i');
 

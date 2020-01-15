@@ -33,4 +33,4 @@ module.exports = {
   login
 };
 
-// in login function I changes the json error message to "'Please enter a valid email and Password.'" and accesed it on the formin in the login component. I set the message on the login components state, sent it to the login form as props and then displayed it on the login form.
+// in login function I changes the json error message to "'Please enter a valid email and Password.'" and accesed it on the form in the login component. I set the message on the login components state, sent it to the login form as props and then displayed it on the login form.

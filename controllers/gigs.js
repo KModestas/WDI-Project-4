@@ -7,7 +7,6 @@ const rp = require('request-promise');
 function gigsIndex(req, res) {
   // put in here a request to the skiddle api that shows all events in london and returns it as json
 
-
   rp({
     url: 'http://www.skiddle.com/api/v1/events/search',
     method: 'GET',

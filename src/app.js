@@ -30,7 +30,6 @@ class App extends React.Component {
               <Route path="/gigs/:id" component={GigsShow} />
               <Route path="/gigs" component={GigsIndex} />
               <Route path="/profile" component={Profile} />
-
             </Switch>
           </main>
         </div>

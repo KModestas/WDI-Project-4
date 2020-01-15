@@ -14,6 +14,7 @@ class Auth {
   static logout() {
     localStorage.removeItem('token');
   }
+  // removes token / ends session and logs user out
 
   static getPayload() {
     const token = this.getToken();
