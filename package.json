@@ -14,7 +14,7 @@
     "test:server": "nyc --reporter=text --reporter=html mocha test/api/**/*.js --exit"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "bcrypt": "^1.0.3",
     "bfg": "^0.3.0",
     "body-parser": "^1.18.1",
