@@ -31,7 +31,7 @@
     "request-promise": "^4.2.2"
   },
   "devDependencies": {
-    "atob": "^2.0.3",
+    "atob": "^2.1.0",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
